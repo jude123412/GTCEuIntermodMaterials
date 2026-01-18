@@ -5,7 +5,11 @@ import gregtech.api.unification.material.event.MaterialEvent;
 import gregtech.api.unification.material.event.MaterialRegistryEvent;
 import gtceuim.Tags;
 import gtceuim.api.util.IMLogger;
+import gtceuim.loaders.OreDictionaryLoader;
 import gtceuim.unification.material.materials.IMMaterials;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -26,4 +30,14 @@ public class CommonProxy {
         IMLogger.log.info("Registering Materials...");
         IMMaterials.init();
     }
+
+    @SubscribeEvent(priority = EventPriority.LOW)
+    public static void registerRecipesLow(RegistryEvent.Register<IRecipe> event) {
+        IMLogger.log.info("Registering ore dictionaries...");
+        OreDictionaryLoader.init();
+
+        MinecraftForge.EVENT_BUS.post(new GregTechAPI.RegisterEvent<>(null, OreDictionaryLoader.class));
+    }
+
+
 }

@@ -466,14 +466,6 @@ public class IntegrationMaterials {
                 .iconSet(SHINY)
                 .build();
 
-        GaiaSpirit = new Material.Builder(getMetaItemId(), gtceuimId("gaia_spirit"))
-                .dust()
-                .ingot()
-                .flags(GENERATE_ALL_METAL, NO_SMELTING)
-                .color(0xFFFFFF)
-                .iconSet(SHINY)
-                .build();
-
         ManaDiamond = new Material.Builder(getMetaItemId(), gtceuimId("mana_diamond"))
                 .dust()
                 .gem(2)
@@ -488,6 +480,22 @@ public class IntegrationMaterials {
                 .flags(GENERATE_ALL_GEM)
                 .color(0x007EA5)
                 .iconSet(PEARL)
+                .build();
+
+        Dragonstone = new Material.Builder(getMetaItemId(), gtceuimId("dragonstone"))
+                .dust()
+                .gem(2)
+                .flags(GENERATE_ALL_GEM)
+                .color(0xFF2DEA)
+                .iconSet(DIAMOND)
+                .build();
+
+        GaiaSpirit = new Material.Builder(getMetaItemId(), gtceuimId("gaia_spirit"))
+                .dust()
+                .ingot()
+                .flags(GENERATE_ALL_METAL, NO_SMELTING)
+                .color(0xFFFFFF)
+                .iconSet(SHINY)
                 .build();
 
         // Galacticraft

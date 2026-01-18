@@ -10,6 +10,9 @@ import java.util.List;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialFlag;
 import gtceuim.api.unification.material.materials.IMMaterialFlagAddition;
+import gtceuim.api.unification.ore.IMOrePrefix;
+import gtceuim.api.util.IMLogger;
+import gtceuim.loaders.OreDictionaryLoader;
 import gtceuim.unification.material.IntegrationMaterials;
 
 public class IMMaterials {
@@ -49,7 +52,6 @@ public class IMMaterials {
 
         GENERATE_ALL_STONE.addAll(Arrays.asList(
                 NO_SMASHING,
-                NO_WORKING,
                 EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES,
                 EXCLUDE_BLOCK_CRAFTING_RECIPES,
                 GENERATE_PLATE,
@@ -108,6 +110,7 @@ public class IMMaterials {
     public static Material Elementium;
     public static Material ManaDiamond;
     public static Material ManaPearl;
+    public static Material Dragonstone;
     public static Material GaiaSpirit;
 
     // Galacticraft
@@ -117,9 +120,15 @@ public class IMMaterials {
     public static void init() {
 
         // Register Materials
+        IMLogger.log.info("Beginning Material Registry");
         IntegrationMaterials.register();
 
         // Modify Material Flags
+        IMLogger.log.info("Adding/Modifying Material Flags");
         IMMaterialFlagAddition.init();
+
+        // OrePrefix Registry/Modification
+        IMLogger.log.info("Adding/Modifying Ore Prefixes");
+        IMOrePrefix.init();
     }
 }
