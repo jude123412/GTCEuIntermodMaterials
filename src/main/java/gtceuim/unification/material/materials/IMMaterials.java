@@ -1,4 +1,4 @@
-package gtceuim.unification.materials.material;
+package gtceuim.unification.material.materials;
 
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
@@ -9,7 +9,8 @@ import java.util.List;
 
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialFlag;
-import gtceuim.unification.materials.IntegrationMaterials;
+import gtceuim.api.unification.material.materials.IMMaterialFlagAddition;
+import gtceuim.unification.material.IntegrationMaterials;
 
 public class IMMaterials {
 
@@ -114,6 +115,11 @@ public class IMMaterials {
     public static Material Desh;
 
     public static void init() {
+
+        // Register Materials
         IntegrationMaterials.register();
+
+        // Modify Material Flags
+        IMMaterialFlagAddition.init();
     }
 }

@@ -5,7 +5,7 @@ import gregtech.api.unification.material.event.MaterialEvent;
 import gregtech.api.unification.material.event.MaterialRegistryEvent;
 import gtceuim.Tags;
 import gtceuim.api.util.IMLogger;
-import gtceuim.unification.materials.material.IMMaterials;
+import gtceuim.unification.material.materials.IMMaterials;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;

@@ -1,4 +1,4 @@
-package gtceuim.unification.materials.info;
+package gtceuim.unification.material.info;
 
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 
