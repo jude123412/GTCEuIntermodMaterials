@@ -3,6 +3,8 @@ package gtceuim.unification.materials;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
+import static gtceuim.unification.materials.material.Materials.*;
+
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
@@ -151,7 +153,7 @@ public class IntegrationMaterials {
                         .blastStats(VA[MV], 1100))
                 .components(Steel, 1, Silicon, 1)
                 .color(0x999999)
-                .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .iconSet(MaterialIconSet.SHINY)
                 .build();
 
         EnergeticAlloy = new Material.Builder(getMetaItemId(), gthhId("energetic_alloy"))
@@ -164,7 +166,7 @@ public class IntegrationMaterials {
                         .blastStats(VA[MV], 1680))
                 .components(Gold, 1, Redstone, 1, Glowstone, 1)
                 .color(0xFF7402)
-                .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .iconSet(MaterialIconSet.SHINY)
                 .cableProperties(V[MV], 4, 2, false)
                 .build();
 
@@ -178,7 +180,7 @@ public class IntegrationMaterials {
                         .blastStats(VA[HV], 2052))
                 .components(EnergeticAlloy, 1, EnderPearl, 1)
                 .color(0xBEFF1C)
-                .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .iconSet(MaterialIconSet.SHINY)
                 .cableProperties(V[EV], 8, 8, false)
                 .build();
 
@@ -192,7 +194,7 @@ public class IntegrationMaterials {
                         .blastStats(VA[MV], 860))
                 .components(ElectricalSteel, 1, Redstone, 1, Silicon, 1)
                 .color(0xCC3030)
-                .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .iconSet(MaterialIconSet.SHINY)
                 .cableProperties(32, 1, 0, false)
                 .build();
 
@@ -206,7 +208,7 @@ public class IntegrationMaterials {
                         .blastStats(VA[MV], 900))
                 .components(RedstoneAlloy, 1, Steel, 1, Redstone, 1)
                 .color(0xFFB4A5)
-                .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .iconSet(MaterialIconSet.SHINY)
                 .cableProperties(32, 2, 1)
                 .build();
 
@@ -220,7 +222,7 @@ public class IntegrationMaterials {
                         .blastStats(VA[MV], 625))
                 .components(EnderPearl, 1, Steel, 1)
                 .color(0x9AFFB1)
-                .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .iconSet(MaterialIconSet.SHINY)
                 .cableProperties(8, 1, 0, false)
                 .build();
 
@@ -243,7 +245,7 @@ public class IntegrationMaterials {
                         .blastStats(VA[MV], 1200))
                 .components(Steel, 1, Obsidian, 1)
                 .color(0x4C4C4C)
-                .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .iconSet(MaterialIconSet.SHINY)
                 .build();
 
         Soularium = new Material.Builder(getMetaItemId(), gthhId("soularium"))
@@ -256,7 +258,7 @@ public class IntegrationMaterials {
                         .temp(2280, BlastProperty.GasTier.LOW)
                         .blastStats(VA[MV], 1100))
                 .color(0x7A502E)
-                .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .iconSet(MaterialIconSet.SHINY)
                 .build();
 
         EndSteel = new Material.Builder(getMetaItemId(), gthhId("end_steel"))
@@ -269,7 +271,7 @@ public class IntegrationMaterials {
                         .temp(3000, BlastProperty.GasTier.LOW)
                         .blastStats(VA[HV], 1100))
                 .color(0xE5DB8B)
-                .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .iconSet(MaterialIconSet.SHINY)
                 .build();
 
         CrudeSteel = new Material.Builder(getMetaItemId(), gthhId("crude_steel"))
@@ -282,7 +284,7 @@ public class IntegrationMaterials {
                         .temp(1300, BlastProperty.GasTier.LOW)
                         .blastStats(VA[LV], 651))
                 .color(0xCCC3B1)
-                .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .iconSet(MaterialIconSet.SHINY)
                 .cableProperties(V[ULV], 1, 1, false)
                 .build();
 
@@ -296,7 +298,7 @@ public class IntegrationMaterials {
                         .temp(3820, BlastProperty.GasTier.LOW)
                         .blastStats(VA[EV], 2872))
                 .color(0x91FFFF)
-                .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .iconSet(MaterialIconSet.SHINY)
                 .cableProperties(V[IV], 16, 32, false)
                 .build();
 
@@ -310,7 +312,7 @@ public class IntegrationMaterials {
                         .temp(3290, BlastProperty.GasTier.LOW)
                         .blastStats(VA[HV], 2490))
                 .color(0xB26EB2)
-                .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .iconSet(MaterialIconSet.SHINY)
                 .cableProperties(131072, 32, 128, false)
                 .build();
 
@@ -324,7 +326,7 @@ public class IntegrationMaterials {
                         .temp(4890, BlastProperty.GasTier.LOW)
                         .blastStats(VA[EV], 1100))
                 .color(0xFF99EF)
-                .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .iconSet(MaterialIconSet.SHINY)
                 .cableProperties(V[LuV], 24, 64, false)
                 .build();
 
@@ -338,7 +340,7 @@ public class IntegrationMaterials {
                         .blastStats(VA[MV], 1680))
                 .components(Silver, 1, Redstone, 1, Glowstone, 1)
                 .color(0x639ECC)
-                .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .iconSet(MaterialIconSet.SHINY)
                 .cableProperties(V[HV], 4, 8, false)
                 .build();
 
@@ -352,7 +354,7 @@ public class IntegrationMaterials {
                         .blastStats(VA[HV], 2052))
                 .components(EnergeticSilver, 1, EnderPearl, 1)
                 .color(0x7AE6FF)
-                .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .iconSet(MaterialIconSet.SHINY)
                 .build();
 
         StellarAlloy = new Material.Builder(getMetaItemId(), gthhId("stellar_alloy"))
@@ -366,7 +368,7 @@ public class IntegrationMaterials {
                         .blastStats(VA[IV], 9950)
                         .vacuumStats(VA[EV] * 2, 2400))
                 .color(0xDBFFFF)
-                .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .iconSet(MaterialIconSet.SHINY)
                 .cableProperties(V[MAX], 4, 0, false)
                 .build();
 
