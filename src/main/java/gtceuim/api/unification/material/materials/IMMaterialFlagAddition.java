@@ -2,7 +2,5 @@ package gtceuim.api.unification.material.materials;
 
 public class IMMaterialFlagAddition {
 
-    public static void init() {
-
-    }
+    public static void init() {}
 }

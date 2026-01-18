@@ -12,7 +12,6 @@ import gregtech.api.unification.material.info.MaterialFlag;
 import gtceuim.api.unification.material.materials.IMMaterialFlagAddition;
 import gtceuim.api.unification.ore.IMOrePrefix;
 import gtceuim.api.util.IMLogger;
-import gtceuim.loaders.OreDictionaryLoader;
 import gtceuim.unification.material.IntegrationMaterials;
 
 public class IMMaterials {
@@ -118,7 +117,6 @@ public class IMMaterials {
     public static Material Desh;
 
     public static void init() {
-
         // Register Materials
         IMLogger.log.info("Beginning Material Registry");
         IntegrationMaterials.register();

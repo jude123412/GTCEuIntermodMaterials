@@ -1,10 +1,11 @@
 package gtceuim.api.util;
 
-import net.minecraftforge.fml.common.Loader;
-
 import java.util.function.Function;
 
+import net.minecraftforge.fml.common.Loader;
+
 public enum IMMods {
+
     Thaumcraft(Names.THAUMCRAFT),
     Botania(Names.BOTANIA),
     AstralSorcery(Names.ASTRAL_SORCERY),
@@ -21,6 +22,7 @@ public enum IMMods {
     GalaxySpace(Names.GALAXY_SPACE);
 
     public static class Names {
+
         public static final String THAUMCRAFT = "thaumcraft";
         public static final String BOTANIA = "botania";
         public static final String ASTRAL_SORCERY = "astralsorcery";

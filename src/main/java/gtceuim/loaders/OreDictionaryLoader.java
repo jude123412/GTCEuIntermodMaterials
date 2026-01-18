@@ -1,12 +1,13 @@
 package gtceuim.loaders;
 
+import static gtceuim.api.util.IMMods.*;
+
+import net.minecraftforge.oredict.OreDictionary;
+
 import appeng.core.Api;
 import appeng.items.materials.MaterialType;
 import dev.beecube31.crazyae2.core.CrazyAE;
 import gtceuim.api.util.IMUtility;
-import net.minecraftforge.oredict.OreDictionary;
-
-import static gtceuim.api.util.IMMods.*;
 
 public class OreDictionaryLoader {
 
@@ -44,10 +45,14 @@ public class OreDictionaryLoader {
             OreDictionary.registerOre("gemDragonstone", IMUtility.getItemStackFromString("botania", "manaresource", 9));
 
             OreDictionary.registerOre("blockManasteel", IMUtility.getBlockItemStackFromString("botania", "storage", 0));
-            OreDictionary.registerOre("blockTerrasteel", IMUtility.getBlockItemStackFromString("botania", "storage", 1));
-            OreDictionary.registerOre("blockElementium", IMUtility.getBlockItemStackFromString("botania", "storage", 2));
-            OreDictionary.registerOre("blockManaDiamond", IMUtility.getBlockItemStackFromString("botania", "storage", 3));
-            OreDictionary.registerOre("blockDragonstone", IMUtility.getBlockItemStackFromString("botania", "storage", 4));
+            OreDictionary.registerOre("blockTerrasteel",
+                    IMUtility.getBlockItemStackFromString("botania", "storage", 1));
+            OreDictionary.registerOre("blockElementium",
+                    IMUtility.getBlockItemStackFromString("botania", "storage", 2));
+            OreDictionary.registerOre("blockManaDiamond",
+                    IMUtility.getBlockItemStackFromString("botania", "storage", 3));
+            OreDictionary.registerOre("blockDragonstone",
+                    IMUtility.getBlockItemStackFromString("botania", "storage", 4));
         }
 
         if (EnderIo.isModLoaded()) {

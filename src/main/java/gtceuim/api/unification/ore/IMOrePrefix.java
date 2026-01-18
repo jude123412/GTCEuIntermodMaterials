@@ -1,12 +1,12 @@
 package gtceuim.api.unification.ore;
 
-import hellfirepvp.astralsorcery.AstralSorcery;
-import morph.avaritia.Avaritia;
-
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gtceuim.api.util.IMMods.*;
 import static gtceuim.unification.material.materials.IMMaterials.*;
+
+import hellfirepvp.astralsorcery.AstralSorcery;
+import morph.avaritia.Avaritia;
 
 public class IMOrePrefix {
 
@@ -79,7 +79,6 @@ public class IMOrePrefix {
             block.setIgnored(ManaDiamond);
             block.setIgnored(Dragonstone);
         }
-
 
         // Ender Io
         if (EnderIo.isModLoaded()) {
