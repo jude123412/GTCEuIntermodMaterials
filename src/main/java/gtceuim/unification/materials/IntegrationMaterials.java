@@ -11,6 +11,7 @@ import static gtceuim.unification.materials.material.Materials.*;
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
+import gtceuim.api.unification.IMElements;
 
 public class IntegrationMaterials {
 
@@ -86,7 +87,7 @@ public class IntegrationMaterials {
                         .blastStats(VA[UEV], 8000)
                         .vacuumStats(VA[UHV]))
                 .iconSet(COSMICNEUTRONIUM)
-                .element(GTHHElements.CosmicNeutronium)
+                .element(IMElements.CosmicNeutronium)
                 .build();
 
         InfinityCatalyst = new Material.Builder(getMetaItemId(), gtceuimId("infinity_catalyst"))
@@ -95,7 +96,7 @@ public class IntegrationMaterials {
                 .ore()
                 .flags(GENERATE_ALL_GEM)
                 .iconSet(INFINITYCATALYST)
-                .element(GTHHElements.InfinityCatalyst)
+                .element(IMElements.InfinityCatalyst)
                 .build();
 
         Infinity = new Material.Builder(getMetaItemId(), gtceuimId("infinity"))
@@ -107,7 +108,7 @@ public class IntegrationMaterials {
                         .vacuumStats(VA[UEV]))
                 .flags(GENERATE_ALL_METAL)
                 .iconSet(INFINITY)
-                .element(GTHHElements.Infinity)
+                .element(IMElements.Infinity)
                 .cableProperties(V[MAX], 8192, 0, true)
                 .build();
 
@@ -123,7 +124,7 @@ public class IntegrationMaterials {
                         .blastStats(VA[LuV], 2560)
                         .vacuumStats(VA[MV]))
                 .iconSet(SHINY)
-                .element(GTHHElements.Draconium)
+                .element(IMElements.Draconium)
                 .cableProperties(V[UEV], 4, (int) V[IV])
                 .color(0x9500D6)
                 .build();
@@ -139,7 +140,7 @@ public class IntegrationMaterials {
                         .blastStats(VA[LuV], 2560)
                         .vacuumStats(VA[MV]))
                 .iconSet(SHINY)
-                .element(GTHHElements.AwakenedDraconium)
+                .element(IMElements.AwakenedDraconium)
                 .cableProperties(V[UIV], 4, (int) V[LuV])
                 .color(0xFF5D00)
                 .build();
@@ -494,7 +495,7 @@ public class IntegrationMaterials {
                 .dust()
                 .ore()
                 .ingot()
-                .flags(GENERATE_ALL_METAL, NO_SMELTING, GENERATE_COMPRESSED)
+                .flags(GENERATE_ALL_METAL, NO_SMELTING)
                 .color(0x9B7753)
                 .iconSet(DULL)
                 .build();
@@ -503,7 +504,7 @@ public class IntegrationMaterials {
                 .dust()
                 .ore()
                 .ingot()
-                .flags(GENERATE_ALL_METAL, NO_SMELTING, GENERATE_COMPRESSED)
+                .flags(GENERATE_ALL_METAL, NO_SMELTING)
                 .color(0x231D1D)
                 .iconSet(DULL)
                 .build();
