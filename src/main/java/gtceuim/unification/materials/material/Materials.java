@@ -14,6 +14,7 @@ public class Materials {
 
     public static final List<MaterialFlag> GENERATE_ALL_GEM = new ArrayList<>();
     public static final List<MaterialFlag> GENERATE_ALL_METAL = new ArrayList<>();
+    public static final List<MaterialFlag> GENERATE_ALL_STONE = new ArrayList<>();
 
     static {
         GENERATE_ALL_METAL.addAll(
@@ -43,6 +44,14 @@ public class Materials {
                 GENERATE_BOLT_SCREW,
                 GENERATE_FRAME,
                 GENERATE_GEAR));
+
+        GENERATE_ALL_STONE.addAll(Arrays.asList(
+                NO_SMASHING,
+                NO_WORKING,
+                EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES,
+                EXCLUDE_BLOCK_CRAFTING_RECIPES,
+                GENERATE_PLATE,
+                GENERATE_DENSE));
     }
 
     // Mod Integration Materials
