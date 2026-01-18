@@ -9,8 +9,9 @@ import java.util.List;
 
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialFlag;
+import gtceuim.unification.materials.IntegrationMaterials;
 
-public class Materials {
+public class IMMaterials {
 
     public static final List<MaterialFlag> GENERATE_ALL_GEM = new ArrayList<>();
     public static final List<MaterialFlag> GENERATE_ALL_METAL = new ArrayList<>();
@@ -111,4 +112,8 @@ public class Materials {
     // Galacticraft
     public static Material MeteoricIron;
     public static Material Desh;
+
+    public static void init() {
+        IntegrationMaterials.register();
+    }
 }

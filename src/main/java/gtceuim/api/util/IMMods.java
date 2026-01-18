@@ -1,0 +1,65 @@
+package gtceuim.api.util;
+
+import net.minecraftforge.fml.common.Loader;
+
+import java.util.function.Function;
+
+public enum IMMods {
+    Thaumcraft(Names.THAUMCRAFT),
+    Botania(Names.BOTANIA),
+    AstralSorcery(Names.ASTRAL_SORCERY),
+    BloodMagic(Names.BLOOD_MAGIC),
+    Ae2(Names.APPLIED_ENERGISTICS_2),
+    CrazyAe(Names.CRAZY_AE),
+    Avaritia(Names.AVARITIA),
+    EnderIo(Names.ENDER_IO),
+    EnderIoConduits(Names.ENDER_IO_CONDUITS),
+    EnderIoEndergy(Names.ENDER_IO_ENDERGY),
+    EnderIoMachines(Names.ENDER_IO_MACHINES),
+    GalacticraftCore(Names.GALACTICRAFT_CORE),
+    GalacticraftPlanets(Names.GALACTICRAFT_PLANETS),
+    GalaxySpace(Names.GALAXY_SPACE);
+
+    public static class Names {
+        public static final String THAUMCRAFT = "thaumcraft";
+        public static final String BOTANIA = "botania";
+        public static final String ASTRAL_SORCERY = "astralsorcery";
+        public static final String BLOOD_MAGIC = "bloodmagic";
+        public static final String APPLIED_ENERGISTICS_2 = "appliedenergistics2";
+        public static final String CRAZY_AE = "crazyae";
+        public static final String AVARITIA = "avaritia";
+        public static final String ENDER_IO = "enderio";
+        public static final String ENDER_IO_CONDUITS = "enderioconduits";
+        public static final String ENDER_IO_ENDERGY = "enderioendergy";
+        public static final String ENDER_IO_MACHINES = "enderiomachines";
+        public static final String GALACTICRAFT_CORE = "galacticraftcore";
+        public static final String GALACTICRAFT_PLANETS = "galacticraftplanets";
+        public static final String GALAXY_SPACE = "galaxyspace";
+    }
+
+    private final String ID;
+    private final Function<IMMods, Boolean> extraCheck;
+    protected Boolean modLoaded;
+
+    IMMods(String ID) {
+        this.ID = ID;
+        this.extraCheck = null;
+    }
+
+    IMMods(String ID, Function<IMMods, Boolean> extraCheck) {
+        this.ID = ID;
+        this.extraCheck = extraCheck;
+    }
+
+    public boolean isModLoaded() {
+        if (this.modLoaded == null) {
+            this.modLoaded = Loader.isModLoaded(this.ID);
+            if (this.modLoaded) {
+                if (this.extraCheck != null && !this.extraCheck.apply(this)) {
+                    this.modLoaded = false;
+                }
+            }
+        }
+        return this.modLoaded;
+    }
+}
