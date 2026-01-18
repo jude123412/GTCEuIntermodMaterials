@@ -1,14 +1,14 @@
 package gtceuim.unification.materials.material;
 
-import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.info.MaterialFlag;
+import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.*;
+import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.info.MaterialFlag;
 
 public class Materials {
 

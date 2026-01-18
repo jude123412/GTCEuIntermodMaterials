@@ -1,11 +1,10 @@
 package gtceuim.unification.materials.info;
 
-import gregtech.api.unification.material.info.MaterialIconSet;
-
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 
-public class IntegrationIconSet {
+import gregtech.api.unification.material.info.MaterialIconSet;
 
+public class IntegrationIconSet {
 
     public static final MaterialIconSet COSMICNEUTRONIUM = new MaterialIconSet("cosmic_neutronium", SHINY);
     public static final MaterialIconSet INFINITYCATALYST = new MaterialIconSet("infinity_catalyst", SHINY);

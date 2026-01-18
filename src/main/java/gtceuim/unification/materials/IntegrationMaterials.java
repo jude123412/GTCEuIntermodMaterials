@@ -3,13 +3,12 @@ package gtceuim.unification.materials;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
-
+import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gtceuim.unification.materials.info.IntegrationIconSet.*;
 import static gtceuim.unification.materials.material.Materials.*;
 
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.material.Material;
-import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import gregtech.api.unification.material.properties.BlastProperty;
 
 public class IntegrationMaterials {
@@ -516,4 +515,3 @@ public class IntegrationMaterials {
         throw new ArrayIndexOutOfBoundsException();
     }
 }
-
