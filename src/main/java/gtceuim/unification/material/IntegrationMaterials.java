@@ -533,7 +533,7 @@ public class IntegrationMaterials {
                 .ore(true)
                 .flags(GENERATE_ALL_GEM)
                 .components(Silicon, 1, Oxygen, 2)
-                .color(0x7697A6)
+                .color(0x937E55)
                 .iconSet(CERTUS)
                 .build();
 
@@ -543,7 +543,7 @@ public class IntegrationMaterials {
                 .ore(true)
                 .flags(GENERATE_ALL_GEM, DISABLE_DECOMPOSITION)
                 .components(Silicon, 1, Oxygen, 2)
-                .color(0x7697A6)
+                .color(0x00A671)
                 .iconSet(CERTUS)
                 .build();
 
@@ -553,7 +553,7 @@ public class IntegrationMaterials {
                 .ore(true)
                 .flags(GENERATE_ALL_GEM, DISABLE_DECOMPOSITION)
                 .components(Silicon, 1, Oxygen, 2)
-                .color(0x7697A6)
+                .color(0xA6301F)
                 .iconSet(CERTUS)
                 .build();
 
@@ -563,7 +563,7 @@ public class IntegrationMaterials {
                 .ore(true)
                 .flags(GENERATE_ALL_GEM)
                 .components(Silicon, 1, Oxygen, 2)
-                .color(0x7697A6)
+                .color(0x16161B)
                 .iconSet(CERTUS)
                 .build();
     }
