@@ -59,6 +59,20 @@ public class IMOrePrefix {
             block.setIgnored(Infinity);
         }
 
+        // Draconic Evolution
+        if (DraconicEvolution.isModLoaded()) {
+            nugget.setIgnored(Draconium);
+            nugget.setIgnored(AwakenedDraconium);
+
+            ingot.setIgnored(Draconium);
+            ingot.setIgnored(AwakenedDraconium);
+
+            dust.setIgnored(Draconium);
+
+            block.setIgnored(Draconium);
+            block.setIgnored(AwakenedDraconium);
+        }
+
         // Botania
         if (Botania.isModLoaded()) {
             nugget.setIgnored(ManaSteel);

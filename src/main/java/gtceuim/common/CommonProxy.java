@@ -20,16 +20,16 @@ public class CommonProxy {
 
     public void preLoad() {}
 
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void registerMaterials(MaterialEvent event) {
+        IMLogger.log.info("Registering Materials...");
+        IMMaterials.init();
+    }
+
     @SubscribeEvent
     public static void createMaterialRegistry(MaterialRegistryEvent event) {
         IMLogger.log.info("Registering Material Event...");
         GregTechAPI.materialManager.createRegistry("gtceuim");
-    }
-
-    @SubscribeEvent(priority = EventPriority.HIGH)
-    public static void registerMaterials(MaterialEvent event) {
-        IMLogger.log.info("Registering Materials...");
-        IMMaterials.init();
     }
 
     @SubscribeEvent(priority = EventPriority.LOW)

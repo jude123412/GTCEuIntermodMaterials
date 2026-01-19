@@ -129,7 +129,7 @@ public class IntegrationMaterials {
                 .color(0x9500D6)
                 .build();
 
-        AwakenedDraconium = new Material.Builder(getMetaItemId(), gtceuimId("awakened_draconium"))
+        AwakenedDraconium = new Material.Builder(getMetaItemId(), gtceuimId("draconium_awakened"))
                 .dust()
                 .ingot()
                 .ore()
@@ -532,17 +532,16 @@ public class IntegrationMaterials {
                 .gem(2)
                 .ore(true)
                 .flags(GENERATE_ALL_GEM)
-                .components(Silicon, 1, Oxygen, 2)
+                .components(Calcium, 2, Magnesium, 4, Carbon, 2, Oxygen, 6)
                 .color(0x937E55)
                 .iconSet(CERTUS)
-                .build();
+                .build().setFormula("CaMg(CO3)2", true);
 
         MysteriousCrystal = new Material.Builder(getMetaItemId(), gtceuimId("mysterious_crystal"))
                 .dust()
                 .gem(2)
                 .ore(true)
                 .flags(GENERATE_ALL_GEM, DISABLE_DECOMPOSITION)
-                .components(Silicon, 1, Oxygen, 2)
                 .color(0x00A671)
                 .iconSet(CERTUS)
                 .build();
@@ -552,7 +551,6 @@ public class IntegrationMaterials {
                 .gem(2)
                 .ore(true)
                 .flags(GENERATE_ALL_GEM, DISABLE_DECOMPOSITION)
-                .components(Silicon, 1, Oxygen, 2)
                 .color(0xA6301F)
                 .iconSet(CERTUS)
                 .build();

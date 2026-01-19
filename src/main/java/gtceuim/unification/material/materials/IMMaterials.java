@@ -22,7 +22,8 @@ public class IMMaterials {
 
     static {
         GENERATE_ALL_METAL.addAll(
-                EXT2_METAL);
+                EXT2_METAL
+        );
         GENERATE_ALL_METAL.addAll(Arrays.asList(
                 EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES,
                 GENERATE_PLATE,
@@ -37,8 +38,12 @@ public class IMMaterials {
                 GENERATE_FOIL,
                 GENERATE_GEAR,
                 GENERATE_DOUBLE_PLATE,
-                GENERATE_FINE_WIRE));
+                GENERATE_FINE_WIRE
+        ));
 
+        GENERATE_ALL_GEM.addAll(
+                EXT_METAL
+        );
         GENERATE_ALL_GEM.addAll(Arrays.asList(
                 NO_SMASHING,
                 NO_WORKING,
@@ -47,14 +52,18 @@ public class IMMaterials {
                 GENERATE_PLATE,
                 GENERATE_BOLT_SCREW,
                 GENERATE_FRAME,
-                GENERATE_GEAR));
+                GENERATE_GEAR,
+                GENERATE_LENS,
+                CRYSTALLIZABLE
+        ));
 
         GENERATE_ALL_STONE.addAll(Arrays.asList(
                 NO_SMASHING,
                 EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES,
                 EXCLUDE_BLOCK_CRAFTING_RECIPES,
                 GENERATE_PLATE,
-                GENERATE_DENSE));
+                GENERATE_DENSE
+        ));
     }
 
     // Mod Integration Materials

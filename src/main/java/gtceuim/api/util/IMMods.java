@@ -19,7 +19,8 @@ public enum IMMods {
     EnderIoMachines(Names.ENDER_IO_MACHINES),
     GalacticraftCore(Names.GALACTICRAFT_CORE),
     GalacticraftPlanets(Names.GALACTICRAFT_PLANETS),
-    GalaxySpace(Names.GALAXY_SPACE);
+    GalaxySpace(Names.GALAXY_SPACE),
+    DraconicEvolution(Names.DRACONIC_EVOLUTION);
 
     public static class Names {
 
@@ -37,6 +38,7 @@ public enum IMMods {
         public static final String GALACTICRAFT_CORE = "galacticraftcore";
         public static final String GALACTICRAFT_PLANETS = "galacticraftplanets";
         public static final String GALAXY_SPACE = "galaxyspace";
+        public static final String DRACONIC_EVOLUTION = "draconicevolution";
     }
 
     private final String ID;

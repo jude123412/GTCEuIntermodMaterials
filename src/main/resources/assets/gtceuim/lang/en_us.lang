@@ -17,7 +17,7 @@ gtceuim.material.infinity=Infinity
 #
 # Draconic Evolution
 gtceuim.material.draconium=Draconium
-gtceuim.material.awakened_draconium=Draconium
+gtceuim.material.draconium_awakened=Awakened Draconium
 # Draconic Evolution
 #
 # Ender IO
@@ -63,6 +63,7 @@ gtceuim.material.gaia_spirit=Gaia Spirit
 # Galacticraft
 gtceuim.material.meteoric_iron=Meteoric Iron
 gtceuim.material.desh=Desh
+gtceuim.material.solar=Solar
 # Galacticraft
 #
 # GalaxySpace
