@@ -80,10 +80,28 @@ public class OreDictionaryLoader {
         }
 
         if (GalacticraftCore.isModLoaded() || GalacticraftPlanets.isModLoaded()) {
-            OreDictionary.registerOre("blockMeteoricIron",
-                    IMUtility.getItemStackFromString("galacticraftcore", "basic_block_core", 12));
+            OreDictionary.registerOre("dustSolar",
+                    IMUtility.getItemStackFromString("galacticraftplanets", "basic_item_venus", 4));
+
             OreDictionary.registerOre("stickDesh",
                     IMUtility.getItemStackFromString("galacticraftplanets", "item_basic_mars", 1));
+
+            OreDictionary.registerOre("blockMeteoricIron",
+                    IMUtility.getBlockItemStackFromString("galacticraftcore", "basic_block_core", 12));
+            OreDictionary.registerOre("blockDesh",
+                    IMUtility.getBlockItemStackFromString("galacticraftplanets", "mars", 8));
+            OreDictionary.registerOre("oreDesh",
+                    IMUtility.getItemStackFromString("galacticraftplanets", "item_basic_mars", 0));
+
+            if (GalaxySpace.isModLoaded()) {
+                OreDictionary.registerOre("dustDolomite",
+                        IMUtility.getItemStackFromString("galaxyspace", "gs_basic", 4));
+
+                OreDictionary.registerOre("gemDolomite",
+                        IMUtility.getItemStackFromString("galaxyspace", "gs_basic", 3));
+                OreDictionary.registerOre("gemOnyx",
+                        IMUtility.getItemStackFromString("galaxyspace", "br_basic", 3));
+            }
         }
     }
 }

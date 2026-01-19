@@ -516,6 +516,56 @@ public class IntegrationMaterials {
                 .color(0x231D1D)
                 .iconSet(DULL)
                 .build();
+
+        Solar = new Material.Builder(getMetaItemId(), gtceuimId("solar"))
+                .dust()
+                .ore()
+                .ingot()
+                .flags(GENERATE_ALL_METAL, NO_SMELTING)
+                .color(0xE17B29)
+                .iconSet(METALLIC)
+                .build();
+
+        // GalaxySpace
+        Dolomite = new Material.Builder(getMetaItemId(), gtceuimId("dolomite"))
+                .dust()
+                .gem(2)
+                .ore(true)
+                .flags(GENERATE_ALL_GEM)
+                .components(Silicon, 1, Oxygen, 2)
+                .color(0x7697A6)
+                .iconSet(CERTUS)
+                .build();
+
+        MysteriousCrystal = new Material.Builder(getMetaItemId(), gtceuimId("mysterious_crystal"))
+                .dust()
+                .gem(2)
+                .ore(true)
+                .flags(GENERATE_ALL_GEM, DISABLE_DECOMPOSITION)
+                .components(Silicon, 1, Oxygen, 2)
+                .color(0x7697A6)
+                .iconSet(CERTUS)
+                .build();
+
+        VolcanicCrystal = new Material.Builder(getMetaItemId(), gtceuimId("volcanic_crystal"))
+                .dust()
+                .gem(2)
+                .ore(true)
+                .flags(GENERATE_ALL_GEM, DISABLE_DECOMPOSITION)
+                .components(Silicon, 1, Oxygen, 2)
+                .color(0x7697A6)
+                .iconSet(CERTUS)
+                .build();
+
+        Onyx = new Material.Builder(getMetaItemId(), gtceuimId("onyx"))
+                .dust()
+                .gem(2)
+                .ore(true)
+                .flags(GENERATE_ALL_GEM)
+                .components(Silicon, 1, Oxygen, 2)
+                .color(0x7697A6)
+                .iconSet(CERTUS)
+                .build();
     }
 
     private static int getMetaItemId() {

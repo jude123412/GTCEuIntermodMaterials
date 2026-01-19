@@ -154,8 +154,17 @@ public class IMOrePrefix {
         // Galacticraft
         if (GalacticraftCore.isModLoaded()) {
             ingot.setIgnored(MeteoricIron);
+            ingot.setIgnored(Desh);
 
             block.setIgnored(MeteoricIron);
+            block.setIgnored(Desh);
+
+            if (GalaxySpace.isModLoaded()) {
+                dust.setIgnored(Dolomite);
+
+                gem.setIgnored(Dolomite);
+                gem.setIgnored(Onyx);
+            }
         }
     }
 }

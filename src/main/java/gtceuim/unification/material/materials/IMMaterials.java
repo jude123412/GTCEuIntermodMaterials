@@ -115,6 +115,13 @@ public class IMMaterials {
     // Galacticraft
     public static Material MeteoricIron;
     public static Material Desh;
+    public static Material Solar;
+
+    // GalaxySpace
+    public static Material Dolomite;
+    public static Material MysteriousCrystal;
+    public static Material VolcanicCrystal;
+    public static Material Onyx;
 
     public static void init() {
         // Register Materials
