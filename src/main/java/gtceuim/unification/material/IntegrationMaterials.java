@@ -4,8 +4,8 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
+import static gtceuim.api.unification.material.info.IMMaterialIconSet.*;
 import static gtceuim.api.util.IMUtility.*;
-import static gtceuim.unification.material.info.IntegrationIconSet.*;
 import static gtceuim.unification.material.materials.IMMaterials.*;
 
 import gregtech.api.fluids.FluidBuilder;
@@ -26,8 +26,7 @@ public class IntegrationMaterials {
                 .ore(true)
                 .flags(GENERATE_ALL_GEM, DISABLE_DECOMPOSITION)
                 .components(Silicon, 1, Oxygen, 2)
-                .color(0x7697A6)
-                .iconSet(CERTUS)
+                .iconSet(CHARGED_CERTUS_QUARTZ)
                 .build();
 
         Fluix = new Material.Builder(getMetaItemId(), gtceuimId("fluix"))
@@ -37,7 +36,7 @@ public class IntegrationMaterials {
                 .flags(GENERATE_ALL_GEM)
                 .components(ChargedCertusQuartz, 1, CertusQuartz, 1, Redstone, 1)
                 .color(0x832FBA)
-                .iconSet(CERTUS)
+                .iconSet(FLUIX)
                 .build();
 
         FluixPearl = new Material.Builder(getMetaItemId(), gtceuimId("fluix_pearl"))
@@ -45,7 +44,7 @@ public class IntegrationMaterials {
                 .gem(2)
                 .flags(GENERATE_ALL_GEM)
                 .components(Fluix, 1, EnderPearl, 1)
-                .iconSet(PEARL)
+                .iconSet(FLUIX_PEARL)
                 .color(0x832FBA)
                 .build();
 
@@ -53,7 +52,7 @@ public class IntegrationMaterials {
                 .dust(2)
                 .flags(GENERATE_ALL_STONE, DISABLE_DECOMPOSITION)
                 .color(0x001C1C)
-                .iconSet(CERTUS)
+                .iconSet(SKYSTONE)
                 .build();
 
         // Crazy AE
@@ -64,7 +63,7 @@ public class IntegrationMaterials {
                 .flags(GENERATE_ALL_GEM)
                 .components(FluixPearl, 1, CertusQuartz, 1, Fluix, 1)
                 .color(0xFF007F)
-                .iconSet(CERTUS)
+                .iconSet(FLUIXILIZED)
                 .build();
 
         // Avaritia

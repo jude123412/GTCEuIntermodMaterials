@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gregtech:items/material_sets/charged_certus_quartz/crushed",
+    "layer1": "gregtech:items/material_sets/charged_certus_quartz/crushed_overlay"
+  }
+}
