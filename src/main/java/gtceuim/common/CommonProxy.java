@@ -1,5 +1,7 @@
 package gtceuim.common;
 
+import gregtech.api.unification.stack.ItemMaterialInfo;
+import gtceuim.loaders.RecipeLoader;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -38,5 +40,10 @@ public class CommonProxy {
         OreDictionaryLoader.init();
 
         MinecraftForge.EVENT_BUS.post(new GregTechAPI.RegisterEvent<>(null, OreDictionaryLoader.class));
+
+        IMLogger.log.info("Registering recipes...");
+        MinecraftForge.EVENT_BUS.post(new GregTechAPI.RegisterEvent<>(null, ItemMaterialInfo.class));
+
+        RecipeLoader.registerMachineRecipes();
     }
 }

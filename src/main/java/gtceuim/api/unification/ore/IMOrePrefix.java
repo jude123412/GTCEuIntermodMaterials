@@ -25,6 +25,7 @@ public class IMOrePrefix {
             block.setIgnored(CertusQuartz);
             block.setIgnored(Fluix);
             block.modifyMaterialAmount(CertusQuartz, 4);
+            block.modifyMaterialAmount(ChargedCertusQuartz, 4);
             block.modifyMaterialAmount(Fluix, 4);
             block.modifyMaterialAmount(SkyStone, 1);
 
@@ -184,6 +185,8 @@ public class IMOrePrefix {
         if (Thaumcraft.isModLoaded()) {
             ingot.setIgnored(Thaumium);
             ingot.setIgnored(Void);
+
+            gem.setIgnored(Amber);
 
             plate.setIgnored(Thaumium);
             plate.setIgnored(Void);
