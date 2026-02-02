@@ -1,7 +1,5 @@
 package gtceuim.loaders.recipe;
 
-import static gregtech.api.GTValues.ULV;
-import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.COMPRESSOR_RECIPES;
 import static gregtech.api.unification.ore.OrePrefix.block;
 import static gregtech.api.unification.ore.OrePrefix.gem;

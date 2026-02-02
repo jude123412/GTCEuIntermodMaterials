@@ -582,7 +582,7 @@ public class IntegrationMaterials {
                 .flags(GENERATE_ALL_METAL)
                 .color(0x3b2453)
                 .iconSet(THAUMIUM)
-                .build().setFormula("FeMa",true);
+                .build().setFormula("FeMa", true);
 
         Void = new Material.Builder(getMetaItemId(), gtceuimId("void"))
                 .dust()
@@ -590,7 +590,7 @@ public class IntegrationMaterials {
                 .flags(GENERATE_ALL_METAL)
                 .color(0x3b2453)
                 .iconSet(VOID)
-                .build().setFormula("?Ma",true);
+                .build().setFormula("?Ma", true);
 
         DirtyAirCrystal = new Material.Builder(getMetaItemId(), gtceuimId("dirty_air_crystal"))
                 .dust()

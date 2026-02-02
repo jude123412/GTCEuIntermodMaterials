@@ -1,7 +1,5 @@
 package gtceuim.common;
 
-import gregtech.api.unification.stack.ItemMaterialInfo;
-import gtceuim.loaders.RecipeLoader;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -12,9 +10,11 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import gregtech.api.GregTechAPI;
 import gregtech.api.unification.material.event.MaterialEvent;
 import gregtech.api.unification.material.event.MaterialRegistryEvent;
+import gregtech.api.unification.stack.ItemMaterialInfo;
 import gtceuim.Tags;
 import gtceuim.api.util.IMLogger;
 import gtceuim.loaders.OreDictionaryLoader;
+import gtceuim.loaders.RecipeLoader;
 import gtceuim.unification.material.materials.IMMaterials;
 
 @Mod.EventBusSubscriber(modid = Tags.MODID)
