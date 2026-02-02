@@ -180,5 +180,19 @@ public class IMOrePrefix {
                 gem.setIgnored(Onyx);
             }
         }
+
+        if (Thaumcraft.isModLoaded()) {
+            ingot.setIgnored(Thaumium);
+            ingot.setIgnored(Void);
+
+            plate.setIgnored(Thaumium);
+            plate.setIgnored(Void);
+
+            nugget.setIgnored(Thaumium);
+            nugget.setIgnored(Void);
+
+            block.setIgnored(Thaumium);
+            block.setIgnored(Void);
+        }
     }
 }

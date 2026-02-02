@@ -132,6 +132,17 @@ public class IMMaterials {
     public static Material VolcanicCrystal;
     public static Material Onyx;
 
+    // Thaumcraft
+    public static Material Amber;
+    public static Material Thaumium;
+    public static Material Void;
+    public static Material DirtyAirCrystal;
+    public static Material DirtyTerraCrystal;
+    public static Material DirtyIgnisCrystal;
+    public static Material DirtyAquaCrystal;
+    public static Material DirtyOrdoCrystal;
+    public static Material DirtyPerditioCrystal;
+
     public static void init() {
         // Register Materials
         IMLogger.log.info("Beginning Material Registry");

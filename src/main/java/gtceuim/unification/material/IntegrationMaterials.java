@@ -85,6 +85,7 @@ public class IntegrationMaterials {
                         .temp(10000, BlastProperty.GasTier.LOW)
                         .blastStats(VA[UEV], 8000)
                         .vacuumStats(VA[UHV]))
+                .color(0x1e1d1f)
                 .iconSet(COSMICNEUTRONIUM)
                 .element(IMElements.CosmicNeutronium)
                 .build();
@@ -428,7 +429,7 @@ public class IntegrationMaterials {
                 .flags(GENERATE_ALL_METAL)
                 .color(0x2500D1)
                 .iconSet(STARMETAL)
-                .build();
+                .build().setFormula("Sp?");
 
         Aquamarine = new Material.Builder(getMetaItemId(), gtceuimId("aquamarine"))
                 .dust()
@@ -447,7 +448,7 @@ public class IntegrationMaterials {
                 .flags(GENERATE_ALL_METAL, NO_SMELTING)
                 .color(0x008EFF)
                 .iconSet(SHINY)
-                .build();
+                .build().setFormula("FeMa");
 
         TerraSteel = new Material.Builder(getMetaItemId(), gtceuimId("terrasteel"))
                 .dust()
@@ -455,7 +456,7 @@ public class IntegrationMaterials {
                 .flags(GENERATE_ALL_METAL, NO_SMELTING)
                 .color(0x2DFF4C)
                 .iconSet(SHINY)
-                .build();
+                .build().setFormula("FeMa(C)Ma(BeK4N5)Ma", true);
 
         Elementium = new Material.Builder(getMetaItemId(), gtceuimId("elementium"))
                 .dust()
@@ -463,7 +464,7 @@ public class IntegrationMaterials {
                 .flags(GENERATE_ALL_METAL, NO_SMELTING)
                 .color(0xFF2DEA)
                 .iconSet(SHINY)
-                .build();
+                .build().setFormula("(FeMa)?");
 
         ManaDiamond = new Material.Builder(getMetaItemId(), gtceuimId("mana_diamond"))
                 .dust()
@@ -471,7 +472,7 @@ public class IntegrationMaterials {
                 .flags(GENERATE_ALL_GEM)
                 .color(0x009FB0)
                 .iconSet(DIAMOND)
-                .build();
+                .build().setFormula("(C)Ma");
 
         ManaPearl = new Material.Builder(getMetaItemId(), gtceuimId("mana_pearl"))
                 .dust()
@@ -479,7 +480,7 @@ public class IntegrationMaterials {
                 .flags(GENERATE_ALL_GEM)
                 .color(0x007EA5)
                 .iconSet(PEARL)
-                .build();
+                .build().setFormula("(BeK4N5)Ma", true);
 
         Dragonstone = new Material.Builder(getMetaItemId(), gtceuimId("dragonstone"))
                 .dust()
@@ -487,7 +488,7 @@ public class IntegrationMaterials {
                 .flags(GENERATE_ALL_GEM)
                 .color(0xFF2DEA)
                 .iconSet(DIAMOND)
-                .build();
+                .build().setFormula("Ds");;
 
         GaiaSpirit = new Material.Builder(getMetaItemId(), gtceuimId("gaia_spirit"))
                 .dust()
@@ -495,7 +496,7 @@ public class IntegrationMaterials {
                 .flags(GENERATE_ALL_METAL, NO_SMELTING)
                 .color(0xFFFFFF)
                 .iconSet(SHINY)
-                .build();
+                .build().setFormula("(FeMaCMaBeK4N5)?4", true);
 
         // Galacticraft
         MeteoricIron = new Material.Builder(getMetaItemId(), gtceuimId("meteoric_iron"))
@@ -505,7 +506,7 @@ public class IntegrationMaterials {
                 .flags(GENERATE_ALL_METAL, NO_SMELTING)
                 .color(0x9B7753)
                 .iconSet(DULL)
-                .build();
+                .build().setFormula("FeSp", true);
 
         Desh = new Material.Builder(getMetaItemId(), gtceuimId("desh"))
                 .dust()
@@ -514,7 +515,7 @@ public class IntegrationMaterials {
                 .flags(GENERATE_ALL_METAL, NO_SMELTING)
                 .color(0x231D1D)
                 .iconSet(DULL)
-                .build();
+                .build().setFormula("?Sp");
 
         Solar = new Material.Builder(getMetaItemId(), gtceuimId("solar"))
                 .dust()
@@ -533,7 +534,7 @@ public class IntegrationMaterials {
                 .flags(GENERATE_ALL_GEM)
                 .components(Calcium, 2, Magnesium, 4, Carbon, 2, Oxygen, 6)
                 .color(0x937E55)
-                .iconSet(CERTUS)
+                .iconSet(DIAMOND)
                 .build().setFormula("CaMg(CO3)2", true);
 
         MysteriousCrystal = new Material.Builder(getMetaItemId(), gtceuimId("mysterious_crystal"))
@@ -542,8 +543,8 @@ public class IntegrationMaterials {
                 .ore(true)
                 .flags(GENERATE_ALL_GEM, DISABLE_DECOMPOSITION)
                 .color(0x00A671)
-                .iconSet(CERTUS)
-                .build();
+                .iconSet(DIAMOND)
+                .build().setFormula("?MaSp");
 
         VolcanicCrystal = new Material.Builder(getMetaItemId(), gtceuimId("volcanic_crystal"))
                 .dust()
@@ -551,17 +552,98 @@ public class IntegrationMaterials {
                 .ore(true)
                 .flags(GENERATE_ALL_GEM, DISABLE_DECOMPOSITION)
                 .color(0xA6301F)
-                .iconSet(CERTUS)
+                .iconSet(DIAMOND)
                 .build();
 
         Onyx = new Material.Builder(getMetaItemId(), gtceuimId("onyx"))
                 .dust()
                 .gem(2)
-                .ore(true)
+                .ore()
                 .flags(GENERATE_ALL_GEM)
                 .components(Silicon, 1, Oxygen, 2)
                 .color(0x16161B)
-                .iconSet(CERTUS)
+                .iconSet(DIAMOND)
+                .build();
+
+        // Thaumcraft
+        Amber = new Material.Builder(getMetaItemId(), gtceuimId("amber"))
+                .dust()
+                .gem(2)
+                .ore(true)
+                .flags(GENERATE_ALL_GEM)
+                .components(Carbon, 10, Hydrogen, 16, Oxygen, 1)
+                .color(0xFFC107)
+                .iconSet(AMBER)
+                .build();
+
+        Thaumium = new Material.Builder(getMetaItemId(), gtceuimId("thaumium"))
+                .dust()
+                .ingot()
+                .flags(GENERATE_ALL_METAL)
+                .color(0x3b2453)
+                .iconSet(THAUMIUM)
+                .build().setFormula("FeMa",true);
+
+        Void = new Material.Builder(getMetaItemId(), gtceuimId("void"))
+                .dust()
+                .ingot()
+                .flags(GENERATE_ALL_METAL)
+                .color(0x3b2453)
+                .iconSet(VOID)
+                .build().setFormula("?Ma",true);
+
+        DirtyAirCrystal = new Material.Builder(getMetaItemId(), gtceuimId("dirty_air_crystal"))
+                .dust()
+                .gem(2)
+                .ore(true)
+                .flags(GENERATE_ALL_GEM)
+                .color(0xfff15d)
+                .iconSet(GEM_VERTICAL)
+                .build();
+
+        DirtyIgnisCrystal = new Material.Builder(getMetaItemId(), gtceuimId("dirty_ignis_crystal"))
+                .dust()
+                .gem(2)
+                .ore(true)
+                .flags(GENERATE_ALL_GEM)
+                .color(0xff7028)
+                .iconSet(GEM_VERTICAL)
+                .build();
+
+        DirtyTerraCrystal = new Material.Builder(getMetaItemId(), gtceuimId("dirty_terra_crystal"))
+                .dust()
+                .gem(2)
+                .ore(true)
+                .flags(GENERATE_ALL_GEM)
+                .color(0x41bb2c)
+                .iconSet(GEM_VERTICAL)
+                .build();
+
+        DirtyAquaCrystal = new Material.Builder(getMetaItemId(), gtceuimId("dirty_aqua_crystal"))
+                .dust()
+                .gem(2)
+                .ore(true)
+                .flags(GENERATE_ALL_GEM)
+                .color(0x01a9dc)
+                .iconSet(GEM_VERTICAL)
+                .build();
+
+        DirtyOrdoCrystal = new Material.Builder(getMetaItemId(), gtceuimId("dirty_ordo_crystal"))
+                .dust()
+                .gem(2)
+                .ore(true)
+                .flags(GENERATE_ALL_GEM)
+                .color(0xd4eae2)
+                .iconSet(GEM_VERTICAL)
+                .build();
+
+        DirtyPerditioCrystal = new Material.Builder(getMetaItemId(), gtceuimId("dirty_perditio_crystal"))
+                .dust()
+                .gem(2)
+                .ore(true)
+                .flags(GENERATE_ALL_GEM)
+                .color(0x1e1d1f)
+                .iconSet(GEM_VERTICAL)
                 .build();
     }
 

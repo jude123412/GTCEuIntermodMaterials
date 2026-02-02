@@ -103,5 +103,12 @@ public class OreDictionaryLoader {
                         IMUtility.getItemStackFromString("galaxyspace", "br_basic", 3));
             }
         }
+
+        if (Thaumcraft.isModLoaded()) {
+            OreDictionary.registerOre("gemMercury",
+                    IMUtility.getItemStackFromString("thaumcraft", "quicksilver", 0));
+            OreDictionary.registerOre("nuggetMercury",
+                    IMUtility.getItemStackFromString("thaumcraft", "nugget", 5));
+        }
     }
 }
