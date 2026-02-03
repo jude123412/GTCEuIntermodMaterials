@@ -3,6 +3,8 @@ package gtceuim.api.unification.ore;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gtceuim.api.util.IMMods.*;
+import static gtceuim.gtceuimConfig.disableAe2Integration;
+import static gtceuim.gtceuimConfig.disableCrazyAeIntegration;
 import static gtceuim.unification.material.materials.IMMaterials.*;
 
 import hellfirepvp.astralsorcery.AstralSorcery;
@@ -12,7 +14,7 @@ public class IMOrePrefix {
 
     public static void init() {
         // Ae2
-        if (Ae2.isModLoaded()) {
+        if (Ae2.isModLoaded() && !disableAe2Integration) {
             dust.setIgnored(SkyStone);
             dust.setIgnored(CertusQuartz);
             dust.setIgnored(Fluix);
@@ -30,7 +32,9 @@ public class IMOrePrefix {
             block.modifyMaterialAmount(SkyStone, 1);
 
             // Crazy AE
-            if (CrazyAe.isModLoaded()) {
+            if (CrazyAe.isModLoaded() && !disableCrazyAeIntegration) {
+                gem.setIgnored(Fluixilized);
+
                 block.setIgnored(Fluixilized);
                 block.modifyMaterialAmount(Fluixilized, 4);
             }

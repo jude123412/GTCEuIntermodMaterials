@@ -3,6 +3,10 @@ package gtceuim.loaders.recipe;
 import static gregtech.api.recipes.RecipeMaps.COMPRESSOR_RECIPES;
 import static gregtech.api.unification.ore.OrePrefix.block;
 import static gregtech.api.unification.ore.OrePrefix.gem;
+import static gtceuim.api.util.IMMods.Ae2;
+import static gtceuim.api.util.IMMods.CrazyAe;
+import static gtceuim.gtceuimConfig.disableAe2Integration;
+import static gtceuim.gtceuimConfig.disableCrazyAeIntegration;
 import static gtceuim.unification.material.materials.IMMaterials.Amber;
 import static gtceuim.unification.material.materials.IMMaterials.Aquamarine;
 import static gtceuim.unification.material.materials.IMMaterials.ChargedCertusQuartz;
@@ -36,16 +40,28 @@ public class CompressorRecipes {
 
     private static void registerCompressorRecipes() {
         // AE2
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, ChargedCertusQuartz, 4)
-                .output(block, ChargedCertusQuartz)
-                .buildAndRegister();
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, FluixPearl, 9)
-                .output(block, FluixPearl)
-                .buildAndRegister();
+        if (Ae2.isModLoaded() && !disableAe2Integration) {
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, ChargedCertusQuartz, 4)
+                    .output(block, ChargedCertusQuartz)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, FluixPearl, 9)
+                    .output(block, FluixPearl)
+                    .buildAndRegister();
+
+            // Crazy AE2
+            if (CrazyAe.isModLoaded() && !disableCrazyAeIntegration) {
+                COMPRESSOR_RECIPES.recipeBuilder()
+                        .duration(300).EUt(2)
+                        .input(gem, FluixPearl, 9)
+                        .output(block, FluixPearl)
+                        .buildAndRegister();
+            }
+        }
+
         // Avaritia
         COMPRESSOR_RECIPES.recipeBuilder()
                 .duration(300).EUt(2)

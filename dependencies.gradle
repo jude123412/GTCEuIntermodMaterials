@@ -95,7 +95,11 @@ dependencies {
     // Draconic Evolution
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:draconic-evolution-2.3.28.354-223565:3431261") // Draconic Evolution 2.3.28.354
     // Draconic Evolution
-    
+
+    // Aether Mod
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:aether-mod-1.5.4.1-255308:6316434") // Aether Mod 1.5.4.1
+    // Aether Mod
+
     // Galacticraft
 //    runtimeOnlyNonPublishable rfg.deobf("curse.maven:galacticraft-4.0.6-564236:6364107") // Galacticraft 4.0.7
 //    runtimeOnlyNonPublishable rfg.deobf("curse.maven:galaxy-space-2.2.0-238770:7005609") // Galaxy Space 2.2.0

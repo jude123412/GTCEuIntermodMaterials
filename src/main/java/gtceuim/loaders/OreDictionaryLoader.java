@@ -13,22 +13,24 @@ public class OreDictionaryLoader {
 
     public static void init() {
         if (Ae2.isModLoaded()) {
-            OreDictionary.registerOre("gemCertusQuartz", MaterialType.CERTUS_QUARTZ_CRYSTAL.stack(1));
-            OreDictionary.registerOre("gemChargedCertusQuartz", MaterialType.CERTUS_QUARTZ_CRYSTAL_CHARGED.stack(1));
-            OreDictionary.registerOre("gemFluix", MaterialType.FLUIX_CRYSTAL.stack(1));
-            OreDictionary.registerOre("gemFluixPearl", MaterialType.FLUIX_PEARL.stack(1));
-            OreDictionary.registerOre("dustSkystone", MaterialType.SKY_DUST.stack(1));
+            OreDictionary.registerOre("gemCertusQuartz", IMUtility.getItemStackFromString("appliedenergistics2", "material", 0));
+            OreDictionary.registerOre("gemChargedCertusQuartz", IMUtility.getItemStackFromString("appliedenergistics2", "material", 1));
+            OreDictionary.registerOre("gemFluix", IMUtility.getItemStackFromString("appliedenergistics2", "material", 7));
+            OreDictionary.registerOre("gemFluixPearl", IMUtility.getItemStackFromString("appliedenergistics2", "material", 9));
+            OreDictionary.registerOre("dustSkystone", IMUtility.getItemStackFromString("appliedenergistics2", "material", 45));
             OreDictionary.registerOre("blockCertusQuartz",
-                    Api.INSTANCE.definitions().blocks().quartzBlock().maybeBlock().get());
+                    IMUtility.getBlockItemStackFromString("appliedenergistics2", "quartz_block", 0));
             OreDictionary.registerOre("blockFluix",
-                    Api.INSTANCE.definitions().blocks().fluixBlock().maybeBlock().get());
+                    IMUtility.getBlockItemStackFromString("appliedenergistics2", "fluix_block", 0));
             OreDictionary.registerOre("blockSkystone",
-                    Api.INSTANCE.definitions().blocks().skyStoneBlock().maybeBlock().get());
+                    IMUtility.getBlockItemStackFromString("appliedenergistics2", "sky_stone_block", 0));
         }
 
         if (CrazyAe.isModLoaded()) {
+            OreDictionary.registerOre("gemFluixilized",
+                    IMUtility.getItemStackFromString("crazyae", "material", 35));
             OreDictionary.registerOre("blockFluixilized",
-                    CrazyAE.definitions().blocks().fluixilizedBlock().maybeBlock().get());
+                    IMUtility.getBlockItemStackFromString("crazyae", "fluixilized_block", 0));
         }
 
         if (Botania.isModLoaded()) {
