@@ -4,7 +4,16 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gtceuim.api.util.IMMods.*;
 import static gtceuim.gtceuimConfig.disableAe2Integration;
+import static gtceuim.gtceuimConfig.disableAstralSorceryIntegration;
+import static gtceuim.gtceuimConfig.disableAvaritiaIntegration;
+import static gtceuim.gtceuimConfig.disableBotaniaIntegration;
 import static gtceuim.gtceuimConfig.disableCrazyAeIntegration;
+import static gtceuim.gtceuimConfig.disableDraconicEvolutionIntegration;
+import static gtceuim.gtceuimConfig.disableEnderIoEndergyIntegration;
+import static gtceuim.gtceuimConfig.disableEnderIoIntegration;
+import static gtceuim.gtceuimConfig.disableGalacticraftIntegration;
+import static gtceuim.gtceuimConfig.disableGalaxySpaceIntegration;
+import static gtceuim.gtceuimConfig.disableThaumcraftIntegration;
 import static gtceuim.unification.material.materials.IMMaterials.*;
 
 import hellfirepvp.astralsorcery.AstralSorcery;
@@ -41,7 +50,7 @@ public class IMOrePrefix {
         }
 
         // Astral Sorcery
-        if (AstralSorcery.isModLoaded()) {
+        if (AstralSorcery.isModLoaded() && !disableAstralSorceryIntegration) {
             dust.setIgnored(Starmetal);
 
             ingot.setIgnored(Starmetal);
@@ -50,7 +59,7 @@ public class IMOrePrefix {
         }
 
         // Avaritia
-        if (Avaritia.isModLoaded()) {
+        if (Avaritia.isModLoaded() && !disableAvaritiaIntegration) {
             nugget.setIgnored(CosmicNeutronium);
 
             ingot.setIgnored(CrystalMatrix);
@@ -65,7 +74,7 @@ public class IMOrePrefix {
         }
 
         // Draconic Evolution
-        if (DraconicEvolution.isModLoaded()) {
+        if (DraconicEvolution.isModLoaded() && !disableDraconicEvolutionIntegration) {
             nugget.setIgnored(Draconium);
             nugget.setIgnored(AwakenedDraconium);
 
@@ -79,7 +88,7 @@ public class IMOrePrefix {
         }
 
         // Botania
-        if (Botania.isModLoaded()) {
+        if (Botania.isModLoaded() && !disableBotaniaIntegration) {
             nugget.setIgnored(ManaSteel);
             nugget.setIgnored(TerraSteel);
             nugget.setIgnored(Elementium);
@@ -100,7 +109,7 @@ public class IMOrePrefix {
         }
 
         // Ender Io
-        if (EnderIo.isModLoaded()) {
+        if (EnderIo.isModLoaded() && !disableEnderIoIntegration) {
             nugget.setIgnored(ElectricalSteel);
             nugget.setIgnored(EnergeticAlloy);
             nugget.setIgnored(VibrantAlloy);
@@ -143,7 +152,7 @@ public class IMOrePrefix {
             block.setIgnored(Soularium);
             block.setIgnored(EndSteel);
 
-            if (EnderIoEndergy.isModLoaded()) {
+            if (EnderIoEndergy.isModLoaded() && !disableEnderIoEndergyIntegration) {
                 nugget.setIgnored(CrudeSteel);
                 nugget.setIgnored(CrystallineAlloy);
                 nugget.setIgnored(MelodicAlloy);
@@ -171,14 +180,14 @@ public class IMOrePrefix {
         }
 
         // Galacticraft
-        if (GalacticraftCore.isModLoaded()) {
+        if (GalacticraftCore.isModLoaded() && disableGalacticraftIntegration) {
             ingot.setIgnored(MeteoricIron);
             ingot.setIgnored(Desh);
 
             block.setIgnored(MeteoricIron);
             block.setIgnored(Desh);
 
-            if (GalaxySpace.isModLoaded()) {
+            if (GalaxySpace.isModLoaded() && !disableGalaxySpaceIntegration) {
                 dust.setIgnored(Dolomite);
 
                 gem.setIgnored(Dolomite);
@@ -186,7 +195,7 @@ public class IMOrePrefix {
             }
         }
 
-        if (Thaumcraft.isModLoaded()) {
+        if (Thaumcraft.isModLoaded() && !disableThaumcraftIntegration) {
             ingot.setIgnored(Thaumium);
             ingot.setIgnored(Void);
 

@@ -4,9 +4,21 @@ import static gregtech.api.recipes.RecipeMaps.COMPRESSOR_RECIPES;
 import static gregtech.api.unification.ore.OrePrefix.block;
 import static gregtech.api.unification.ore.OrePrefix.gem;
 import static gtceuim.api.util.IMMods.Ae2;
+import static gtceuim.api.util.IMMods.AstralSorcery;
+import static gtceuim.api.util.IMMods.Avaritia;
+import static gtceuim.api.util.IMMods.Botania;
 import static gtceuim.api.util.IMMods.CrazyAe;
+import static gtceuim.api.util.IMMods.EnderIo;
+import static gtceuim.api.util.IMMods.GalaxySpace;
+import static gtceuim.api.util.IMMods.Thaumcraft;
 import static gtceuim.gtceuimConfig.disableAe2Integration;
+import static gtceuim.gtceuimConfig.disableAstralSorceryIntegration;
+import static gtceuim.gtceuimConfig.disableAvaritiaIntegration;
+import static gtceuim.gtceuimConfig.disableBotaniaIntegration;
 import static gtceuim.gtceuimConfig.disableCrazyAeIntegration;
+import static gtceuim.gtceuimConfig.disableEnderIoIntegration;
+import static gtceuim.gtceuimConfig.disableGalaxySpaceIntegration;
+import static gtceuim.gtceuimConfig.disableThaumcraftIntegration;
 import static gtceuim.unification.material.materials.IMMaterials.Amber;
 import static gtceuim.unification.material.materials.IMMaterials.Aquamarine;
 import static gtceuim.unification.material.materials.IMMaterials.ChargedCertusQuartz;
@@ -63,125 +75,137 @@ public class CompressorRecipes {
         }
 
         // Avaritia
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, InfinityCatalyst, 9)
-                .output(block, InfinityCatalyst)
-                .buildAndRegister();
+        if (Avaritia.isModLoaded() && !disableAvaritiaIntegration) {
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, InfinityCatalyst, 9)
+                    .output(block, InfinityCatalyst)
+                    .buildAndRegister();
+        }
 
-        // Ender Io
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, PulsatingCrystal, 9)
-                .output(block, PulsatingCrystal)
-                .buildAndRegister();
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, VibrantCrystal, 9)
-                .output(block, VibrantCrystal)
-                .buildAndRegister();
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, EnderCrystal, 9)
-                .output(block, EnderCrystal)
-                .buildAndRegister();
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, EnticingCrystal, 9)
-                .output(block, EnticingCrystal)
-                .buildAndRegister();
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, WeatherCrystal, 9)
-                .output(block, WeatherCrystal)
-                .buildAndRegister();
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, PrescientCrystal, 9)
-                .output(block, PrescientCrystal)
-                .buildAndRegister();
+        // Ender Io{
+        if (EnderIo.isModLoaded() && !disableEnderIoIntegration) {
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, PulsatingCrystal, 9)
+                    .output(block, PulsatingCrystal)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, VibrantCrystal, 9)
+                    .output(block, VibrantCrystal)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, EnderCrystal, 9)
+                    .output(block, EnderCrystal)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, EnticingCrystal, 9)
+                    .output(block, EnticingCrystal)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, WeatherCrystal, 9)
+                    .output(block, WeatherCrystal)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, PrescientCrystal, 9)
+                    .output(block, PrescientCrystal)
+                    .buildAndRegister();
+        }
 
         // Astral Sorcery
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, Aquamarine, 9)
-                .output(block, Aquamarine)
-                .buildAndRegister();
+        if (AstralSorcery.isModLoaded() && !disableAstralSorceryIntegration) {
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, Aquamarine, 9)
+                    .output(block, Aquamarine)
+                    .buildAndRegister();
+        }
 
         // Botania
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, ManaPearl, 9)
-                .output(block, ManaPearl)
-                .buildAndRegister();
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, ManaDiamond, 9)
-                .output(block, ManaDiamond)
-                .buildAndRegister();
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, Dragonstone, 9)
-                .output(block, Dragonstone)
-                .buildAndRegister();
+        if (Botania.isModLoaded() && !disableBotaniaIntegration) {
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, ManaPearl, 9)
+                    .output(block, ManaPearl)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, ManaDiamond, 9)
+                    .output(block, ManaDiamond)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, Dragonstone, 9)
+                    .output(block, Dragonstone)
+                    .buildAndRegister();
+        }
 
         // Galaxy Space
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, Dolomite, 9)
-                .output(block, Dolomite)
-                .buildAndRegister();
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, MysteriousCrystal, 9)
-                .output(block, MysteriousCrystal)
-                .buildAndRegister();
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, VolcanicCrystal, 9)
-                .output(block, VolcanicCrystal)
-                .buildAndRegister();
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, Onyx, 9)
-                .output(block, Onyx)
-                .buildAndRegister();
+        if (GalaxySpace.isModLoaded() && !disableGalaxySpaceIntegration){
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, Dolomite, 9)
+                    .output(block, Dolomite)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, MysteriousCrystal, 9)
+                    .output(block, MysteriousCrystal)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, VolcanicCrystal, 9)
+                    .output(block, VolcanicCrystal)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, Onyx, 9)
+                    .output(block, Onyx)
+                    .buildAndRegister();
+        }
 
         // Thaumcraft
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, Amber, 9)
-                .output(block, Amber)
-                .buildAndRegister();
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, DirtyAirCrystal, 9)
-                .output(block, DirtyAirCrystal)
-                .buildAndRegister();
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, DirtyIgnisCrystal, 9)
-                .output(block, DirtyIgnisCrystal)
-                .buildAndRegister();
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, DirtyTerraCrystal, 9)
-                .output(block, DirtyTerraCrystal)
-                .buildAndRegister();
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, DirtyAquaCrystal, 9)
-                .output(block, DirtyAquaCrystal)
-                .buildAndRegister();
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, DirtyOrdoCrystal, 9)
-                .output(block, DirtyOrdoCrystal)
-                .buildAndRegister();
-        COMPRESSOR_RECIPES.recipeBuilder()
-                .duration(300).EUt(2)
-                .input(gem, DirtyPerditioCrystal, 9)
-                .output(block, DirtyPerditioCrystal)
-                .buildAndRegister();
+        if (Thaumcraft.isModLoaded() && !disableThaumcraftIntegration) {
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, Amber, 9)
+                    .output(block, Amber)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, DirtyAirCrystal, 9)
+                    .output(block, DirtyAirCrystal)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, DirtyIgnisCrystal, 9)
+                    .output(block, DirtyIgnisCrystal)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, DirtyTerraCrystal, 9)
+                    .output(block, DirtyTerraCrystal)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, DirtyAquaCrystal, 9)
+                    .output(block, DirtyAquaCrystal)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, DirtyOrdoCrystal, 9)
+                    .output(block, DirtyOrdoCrystal)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, DirtyPerditioCrystal, 9)
+                    .output(block, DirtyPerditioCrystal)
+                    .buildAndRegister();
+        }
     }
 }
