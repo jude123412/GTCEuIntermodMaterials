@@ -138,6 +138,12 @@ public class IMMaterials {
     public static Material DirtyOrdoCrystal;
     public static Material DirtyPerditioCrystal;
 
+    // Aether Mod
+    public static Material Zanite;
+    public static Material Ambrosium;
+    public static Material Gravitite;
+    public static Material EnchantedGravitite;
+
     public static void init() {
         // Register Materials
         IMLogger.log.info("Beginning Material Registry");

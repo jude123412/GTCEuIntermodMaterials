@@ -64,6 +64,7 @@ import static gtceuim.api.unification.material.info.IMMaterialIconSet.STARMETAL;
 import static gtceuim.api.unification.material.info.IMMaterialIconSet.THAUMIUM;
 import static gtceuim.api.unification.material.info.IMMaterialIconSet.VOID;
 import static gtceuim.api.util.IMMods.Ae2;
+import static gtceuim.api.util.IMMods.AetherLegacy;
 import static gtceuim.api.util.IMMods.AstralSorcery;
 import static gtceuim.api.util.IMMods.Avaritia;
 import static gtceuim.api.util.IMMods.Botania;
@@ -76,6 +77,7 @@ import static gtceuim.api.util.IMMods.GalaxySpace;
 import static gtceuim.api.util.IMMods.Thaumcraft;
 import static gtceuim.api.util.IMUtility.gtceuimId;
 import static gtceuim.gtceuimConfig.disableAe2Integration;
+import static gtceuim.gtceuimConfig.disableAetherModIntegration;
 import static gtceuim.gtceuimConfig.disableAstralSorceryIntegration;
 import static gtceuim.gtceuimConfig.disableAvaritiaIntegration;
 import static gtceuim.gtceuimConfig.disableBotaniaIntegration;
@@ -87,6 +89,7 @@ import static gtceuim.gtceuimConfig.disableGalacticraftIntegration;
 import static gtceuim.gtceuimConfig.disableGalaxySpaceIntegration;
 import static gtceuim.gtceuimConfig.disableThaumcraftIntegration;
 import static gtceuim.unification.material.materials.IMMaterials.Amber;
+import static gtceuim.unification.material.materials.IMMaterials.Ambrosium;
 import static gtceuim.unification.material.materials.IMMaterials.Aquamarine;
 import static gtceuim.unification.material.materials.IMMaterials.AwakenedDraconium;
 import static gtceuim.unification.material.materials.IMMaterials.ChargedCertusQuartz;
@@ -109,6 +112,7 @@ import static gtceuim.unification.material.materials.IMMaterials.Draconium;
 import static gtceuim.unification.material.materials.IMMaterials.Dragonstone;
 import static gtceuim.unification.material.materials.IMMaterials.ElectricalSteel;
 import static gtceuim.unification.material.materials.IMMaterials.Elementium;
+import static gtceuim.unification.material.materials.IMMaterials.EnchantedGravitite;
 import static gtceuim.unification.material.materials.IMMaterials.EndSteel;
 import static gtceuim.unification.material.materials.IMMaterials.EnderCrystal;
 import static gtceuim.unification.material.materials.IMMaterials.EnergeticAlloy;
@@ -121,6 +125,7 @@ import static gtceuim.unification.material.materials.IMMaterials.GENERATE_ALL_GE
 import static gtceuim.unification.material.materials.IMMaterials.GENERATE_ALL_METAL;
 import static gtceuim.unification.material.materials.IMMaterials.GENERATE_ALL_STONE;
 import static gtceuim.unification.material.materials.IMMaterials.GaiaSpirit;
+import static gtceuim.unification.material.materials.IMMaterials.Gravitite;
 import static gtceuim.unification.material.materials.IMMaterials.Infinity;
 import static gtceuim.unification.material.materials.IMMaterials.InfinityCatalyst;
 import static gtceuim.unification.material.materials.IMMaterials.ManaDiamond;
@@ -147,6 +152,7 @@ import static gtceuim.unification.material.materials.IMMaterials.VividAlloy;
 import static gtceuim.unification.material.materials.IMMaterials.Void;
 import static gtceuim.unification.material.materials.IMMaterials.VolcanicCrystal;
 import static gtceuim.unification.material.materials.IMMaterials.WeatherCrystal;
+import static gtceuim.unification.material.materials.IMMaterials.Zanite;
 
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.material.Material;
@@ -804,6 +810,44 @@ public class IntegrationMaterials {
                     .flags(GENERATE_ALL_GEM)
                     .color(0x1e1d1f)
                     .iconSet(GEM_VERTICAL)
+                    .build();
+
+        }
+        // Aether Mod
+        if (AetherLegacy.isModLoaded() && !disableAetherModIntegration) {
+            Zanite = new Material.Builder(59, gtceuimId("zanite"))
+                    .dust()
+                    .gem(2)
+                    .ore()
+                    .flags(GENERATE_ALL_GEM)
+                    .color(0x8800c6)
+                    .iconSet(SHINY)
+                    .build();
+
+            Ambrosium = new Material.Builder(60, gtceuimId("ambrosium"))
+                    .dust()
+                    .gem(2)
+                    .ore(true)
+                    .flags(GENERATE_ALL_GEM)
+                    .color(0xF4F260)
+                    .iconSet(SHINY)
+                    .build();
+
+            Gravitite = new Material.Builder(61, gtceuimId("gravitite"))
+                    .dust()
+                    .gem(2)
+                    .ore(true)
+                    .flags(GENERATE_ALL_GEM)
+                    .color(0xc76dc7)
+                    .iconSet(SHINY)
+                    .build();
+
+            EnchantedGravitite = new Material.Builder(62, gtceuimId("enchanted_gravitite"))
+                    .dust()
+                    .ingot()
+                    .flags(GENERATE_ALL_METAL)
+                    .color(0xc600c1)
+                    .iconSet(SHINY)
                     .build();
         }
     }

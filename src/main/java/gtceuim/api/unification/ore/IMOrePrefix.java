@@ -4,6 +4,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gtceuim.api.util.IMMods.*;
 import static gtceuim.gtceuimConfig.disableAe2Integration;
+import static gtceuim.gtceuimConfig.disableAetherModIntegration;
 import static gtceuim.gtceuimConfig.disableAstralSorceryIntegration;
 import static gtceuim.gtceuimConfig.disableAvaritiaIntegration;
 import static gtceuim.gtceuimConfig.disableBotaniaIntegration;
@@ -206,6 +207,14 @@ public class IMOrePrefix {
 
             block.setIgnored(Thaumium);
             block.setIgnored(Void);
+        }
+
+        if (AetherLegacy.isModLoaded() && !disableAetherModIntegration) {
+            gem.setIgnored(Zanite);
+            gem.setIgnored(Ambrosium);
+
+            block.setIgnored(Zanite);
+            block.setIgnored(EnchantedGravitite);
         }
     }
 }

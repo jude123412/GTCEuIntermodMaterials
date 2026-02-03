@@ -2,6 +2,7 @@ package gtceuim.loaders;
 
 import static gtceuim.api.util.IMMods.*;
 import static gtceuim.gtceuimConfig.disableAe2Integration;
+import static gtceuim.gtceuimConfig.disableAetherModIntegration;
 import static gtceuim.gtceuimConfig.disableBotaniaIntegration;
 import static gtceuim.gtceuimConfig.disableCrazyAeIntegration;
 import static gtceuim.gtceuimConfig.disableEnderIoIntegration;
@@ -126,6 +127,11 @@ public class OreDictionaryLoader {
 
             OreDictionary.registerOre("nuggetMercury",
                     IMUtility.getItemStackFromString("thaumcraft", "nugget", 5));
+        }
+
+        if (AetherLegacy.isModLoaded() && !disableAetherModIntegration) {
+            OreDictionary.registerOre("gemAmbrosium",
+                    IMUtility.getItemStackFromString("aether_legacy", "ambrosium_shard", 0));
         }
     }
 }

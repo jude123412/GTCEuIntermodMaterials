@@ -4,6 +4,7 @@ import static gregtech.api.recipes.RecipeMaps.COMPRESSOR_RECIPES;
 import static gregtech.api.unification.ore.OrePrefix.block;
 import static gregtech.api.unification.ore.OrePrefix.gem;
 import static gtceuim.api.util.IMMods.Ae2;
+import static gtceuim.api.util.IMMods.AetherLegacy;
 import static gtceuim.api.util.IMMods.AstralSorcery;
 import static gtceuim.api.util.IMMods.Avaritia;
 import static gtceuim.api.util.IMMods.Botania;
@@ -12,6 +13,7 @@ import static gtceuim.api.util.IMMods.EnderIo;
 import static gtceuim.api.util.IMMods.GalaxySpace;
 import static gtceuim.api.util.IMMods.Thaumcraft;
 import static gtceuim.gtceuimConfig.disableAe2Integration;
+import static gtceuim.gtceuimConfig.disableAetherModIntegration;
 import static gtceuim.gtceuimConfig.disableAstralSorceryIntegration;
 import static gtceuim.gtceuimConfig.disableAvaritiaIntegration;
 import static gtceuim.gtceuimConfig.disableBotaniaIntegration;
@@ -20,6 +22,7 @@ import static gtceuim.gtceuimConfig.disableEnderIoIntegration;
 import static gtceuim.gtceuimConfig.disableGalaxySpaceIntegration;
 import static gtceuim.gtceuimConfig.disableThaumcraftIntegration;
 import static gtceuim.unification.material.materials.IMMaterials.Amber;
+import static gtceuim.unification.material.materials.IMMaterials.Ambrosium;
 import static gtceuim.unification.material.materials.IMMaterials.Aquamarine;
 import static gtceuim.unification.material.materials.IMMaterials.ChargedCertusQuartz;
 import static gtceuim.unification.material.materials.IMMaterials.DirtyAirCrystal;
@@ -43,6 +46,7 @@ import static gtceuim.unification.material.materials.IMMaterials.PulsatingCrysta
 import static gtceuim.unification.material.materials.IMMaterials.VibrantCrystal;
 import static gtceuim.unification.material.materials.IMMaterials.VolcanicCrystal;
 import static gtceuim.unification.material.materials.IMMaterials.WeatherCrystal;
+import static gtceuim.unification.material.materials.IMMaterials.Zanite;
 
 public class CompressorRecipes {
 
@@ -205,6 +209,19 @@ public class CompressorRecipes {
                     .duration(300).EUt(2)
                     .input(gem, DirtyPerditioCrystal, 9)
                     .output(block, DirtyPerditioCrystal)
+                    .buildAndRegister();
+        }
+
+        if (AetherLegacy.isModLoaded() && !disableAetherModIntegration) {
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, Zanite, 9)
+                    .output(block, Zanite)
+                    .buildAndRegister();
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, Ambrosium, 9)
+                    .output(block, Ambrosium)
                     .buildAndRegister();
         }
     }
