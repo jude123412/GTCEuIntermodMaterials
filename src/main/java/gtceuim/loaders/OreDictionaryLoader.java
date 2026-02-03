@@ -11,21 +11,23 @@ import static gtceuim.gtceuimConfig.disableThaumcraftIntegration;
 
 import net.minecraftforge.oredict.OreDictionary;
 
-import appeng.core.Api;
-import appeng.items.materials.MaterialType;
-import dev.beecube31.crazyae2.core.CrazyAE;
 import gtceuim.api.util.IMUtility;
 
 public class OreDictionaryLoader {
 
     public static void init() {
         if (Ae2.isModLoaded() && !disableAe2Integration) {
-            OreDictionary.registerOre("gemCertusQuartz", IMUtility.getItemStackFromString("appliedenergistics2", "material", 0));
-            OreDictionary.registerOre("gemChargedCertusQuartz", IMUtility.getItemStackFromString("appliedenergistics2", "material", 1));
-            OreDictionary.registerOre("gemFluix", IMUtility.getItemStackFromString("appliedenergistics2", "material", 7));
-            OreDictionary.registerOre("gemFluixPearl", IMUtility.getItemStackFromString("appliedenergistics2", "material", 9));
+            OreDictionary.registerOre("gemCertusQuartz",
+                    IMUtility.getItemStackFromString("appliedenergistics2", "material", 0));
+            OreDictionary.registerOre("gemChargedCertusQuartz",
+                    IMUtility.getItemStackFromString("appliedenergistics2", "material", 1));
+            OreDictionary.registerOre("gemFluix",
+                    IMUtility.getItemStackFromString("appliedenergistics2", "material", 7));
+            OreDictionary.registerOre("gemFluixPearl",
+                    IMUtility.getItemStackFromString("appliedenergistics2", "material", 9));
 
-            OreDictionary.registerOre("dustSkystone", IMUtility.getItemStackFromString("appliedenergistics2", "material", 45));
+            OreDictionary.registerOre("dustSkystone",
+                    IMUtility.getItemStackFromString("appliedenergistics2", "material", 45));
 
             OreDictionary.registerOre("blockCertusQuartz",
                     IMUtility.getBlockItemStackFromString("appliedenergistics2", "quartz_block", 0));

@@ -1,10 +1,68 @@
 package gtceuim.unification.material;
 
-import static gregtech.api.GTValues.*;
-import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.*;
-import static gregtech.api.unification.material.info.MaterialIconSet.*;
-import static gtceuim.api.unification.material.info.IMMaterialIconSet.*;
+import static gregtech.api.GTValues.EV;
+import static gregtech.api.GTValues.HV;
+import static gregtech.api.GTValues.IV;
+import static gregtech.api.GTValues.LV;
+import static gregtech.api.GTValues.LuV;
+import static gregtech.api.GTValues.MAX;
+import static gregtech.api.GTValues.MV;
+import static gregtech.api.GTValues.UEV;
+import static gregtech.api.GTValues.UHV;
+import static gregtech.api.GTValues.UIV;
+import static gregtech.api.GTValues.ULV;
+import static gregtech.api.GTValues.V;
+import static gregtech.api.GTValues.VA;
+import static gregtech.api.unification.material.Materials.Aluminium;
+import static gregtech.api.unification.material.Materials.Ash;
+import static gregtech.api.unification.material.Materials.Beryllium;
+import static gregtech.api.unification.material.Materials.Calcium;
+import static gregtech.api.unification.material.Materials.Carbon;
+import static gregtech.api.unification.material.Materials.CertusQuartz;
+import static gregtech.api.unification.material.Materials.Clay;
+import static gregtech.api.unification.material.Materials.Diamond;
+import static gregtech.api.unification.material.Materials.Electrotine;
+import static gregtech.api.unification.material.Materials.Emerald;
+import static gregtech.api.unification.material.Materials.EnderPearl;
+import static gregtech.api.unification.material.Materials.Endstone;
+import static gregtech.api.unification.material.Materials.Glowstone;
+import static gregtech.api.unification.material.Materials.Gold;
+import static gregtech.api.unification.material.Materials.GraniteBlack;
+import static gregtech.api.unification.material.Materials.Hydrogen;
+import static gregtech.api.unification.material.Materials.Magnesium;
+import static gregtech.api.unification.material.Materials.NetherQuartz;
+import static gregtech.api.unification.material.Materials.NetherStar;
+import static gregtech.api.unification.material.Materials.Neutronium;
+import static gregtech.api.unification.material.Materials.Obsidian;
+import static gregtech.api.unification.material.Materials.Oxygen;
+import static gregtech.api.unification.material.Materials.QuartzSand;
+import static gregtech.api.unification.material.Materials.Redstone;
+import static gregtech.api.unification.material.Materials.Sapphire;
+import static gregtech.api.unification.material.Materials.Silicon;
+import static gregtech.api.unification.material.Materials.Silver;
+import static gregtech.api.unification.material.Materials.Steel;
+import static gregtech.api.unification.material.Materials.Tin;
+import static gregtech.api.unification.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
+import static gregtech.api.unification.material.info.MaterialFlags.NO_SMELTING;
+import static gregtech.api.unification.material.info.MaterialIconSet.DIAMOND;
+import static gregtech.api.unification.material.info.MaterialIconSet.DULL;
+import static gregtech.api.unification.material.info.MaterialIconSet.EMERALD;
+import static gregtech.api.unification.material.info.MaterialIconSet.GEM_VERTICAL;
+import static gregtech.api.unification.material.info.MaterialIconSet.METALLIC;
+import static gregtech.api.unification.material.info.MaterialIconSet.SHINY;
+import static gtceuim.api.unification.material.info.IMMaterialIconSet.AMBER;
+import static gtceuim.api.unification.material.info.IMMaterialIconSet.CHARGED_CERTUS_QUARTZ;
+import static gtceuim.api.unification.material.info.IMMaterialIconSet.COSMICNEUTRONIUM;
+import static gtceuim.api.unification.material.info.IMMaterialIconSet.FLUIX;
+import static gtceuim.api.unification.material.info.IMMaterialIconSet.FLUIXILIZED;
+import static gtceuim.api.unification.material.info.IMMaterialIconSet.FLUIX_PEARL;
+import static gtceuim.api.unification.material.info.IMMaterialIconSet.INFINITY;
+import static gtceuim.api.unification.material.info.IMMaterialIconSet.INFINITYCATALYST;
+import static gtceuim.api.unification.material.info.IMMaterialIconSet.PEARL;
+import static gtceuim.api.unification.material.info.IMMaterialIconSet.SKYSTONE;
+import static gtceuim.api.unification.material.info.IMMaterialIconSet.STARMETAL;
+import static gtceuim.api.unification.material.info.IMMaterialIconSet.THAUMIUM;
+import static gtceuim.api.unification.material.info.IMMaterialIconSet.VOID;
 import static gtceuim.api.util.IMMods.Ae2;
 import static gtceuim.api.util.IMMods.AstralSorcery;
 import static gtceuim.api.util.IMMods.Avaritia;
@@ -16,7 +74,7 @@ import static gtceuim.api.util.IMMods.EnderIoEndergy;
 import static gtceuim.api.util.IMMods.GalacticraftCore;
 import static gtceuim.api.util.IMMods.GalaxySpace;
 import static gtceuim.api.util.IMMods.Thaumcraft;
-import static gtceuim.api.util.IMUtility.*;
+import static gtceuim.api.util.IMUtility.gtceuimId;
 import static gtceuim.gtceuimConfig.disableAe2Integration;
 import static gtceuim.gtceuimConfig.disableAstralSorceryIntegration;
 import static gtceuim.gtceuimConfig.disableAvaritiaIntegration;
@@ -28,7 +86,67 @@ import static gtceuim.gtceuimConfig.disableEnderIoIntegration;
 import static gtceuim.gtceuimConfig.disableGalacticraftIntegration;
 import static gtceuim.gtceuimConfig.disableGalaxySpaceIntegration;
 import static gtceuim.gtceuimConfig.disableThaumcraftIntegration;
-import static gtceuim.unification.material.materials.IMMaterials.*;
+import static gtceuim.unification.material.materials.IMMaterials.Amber;
+import static gtceuim.unification.material.materials.IMMaterials.Aquamarine;
+import static gtceuim.unification.material.materials.IMMaterials.AwakenedDraconium;
+import static gtceuim.unification.material.materials.IMMaterials.ChargedCertusQuartz;
+import static gtceuim.unification.material.materials.IMMaterials.ConductiveIron;
+import static gtceuim.unification.material.materials.IMMaterials.CosmicNeutronium;
+import static gtceuim.unification.material.materials.IMMaterials.CrudeSteel;
+import static gtceuim.unification.material.materials.IMMaterials.CrystalMatrix;
+import static gtceuim.unification.material.materials.IMMaterials.CrystallineAlloy;
+import static gtceuim.unification.material.materials.IMMaterials.CrystallinePinkSlime;
+import static gtceuim.unification.material.materials.IMMaterials.DarkSteel;
+import static gtceuim.unification.material.materials.IMMaterials.Desh;
+import static gtceuim.unification.material.materials.IMMaterials.DirtyAirCrystal;
+import static gtceuim.unification.material.materials.IMMaterials.DirtyAquaCrystal;
+import static gtceuim.unification.material.materials.IMMaterials.DirtyIgnisCrystal;
+import static gtceuim.unification.material.materials.IMMaterials.DirtyOrdoCrystal;
+import static gtceuim.unification.material.materials.IMMaterials.DirtyPerditioCrystal;
+import static gtceuim.unification.material.materials.IMMaterials.DirtyTerraCrystal;
+import static gtceuim.unification.material.materials.IMMaterials.Dolomite;
+import static gtceuim.unification.material.materials.IMMaterials.Draconium;
+import static gtceuim.unification.material.materials.IMMaterials.Dragonstone;
+import static gtceuim.unification.material.materials.IMMaterials.ElectricalSteel;
+import static gtceuim.unification.material.materials.IMMaterials.Elementium;
+import static gtceuim.unification.material.materials.IMMaterials.EndSteel;
+import static gtceuim.unification.material.materials.IMMaterials.EnderCrystal;
+import static gtceuim.unification.material.materials.IMMaterials.EnergeticAlloy;
+import static gtceuim.unification.material.materials.IMMaterials.EnergeticSilver;
+import static gtceuim.unification.material.materials.IMMaterials.EnticingCrystal;
+import static gtceuim.unification.material.materials.IMMaterials.Fluix;
+import static gtceuim.unification.material.materials.IMMaterials.FluixPearl;
+import static gtceuim.unification.material.materials.IMMaterials.Fluixilized;
+import static gtceuim.unification.material.materials.IMMaterials.GENERATE_ALL_GEM;
+import static gtceuim.unification.material.materials.IMMaterials.GENERATE_ALL_METAL;
+import static gtceuim.unification.material.materials.IMMaterials.GENERATE_ALL_STONE;
+import static gtceuim.unification.material.materials.IMMaterials.GaiaSpirit;
+import static gtceuim.unification.material.materials.IMMaterials.Infinity;
+import static gtceuim.unification.material.materials.IMMaterials.InfinityCatalyst;
+import static gtceuim.unification.material.materials.IMMaterials.ManaDiamond;
+import static gtceuim.unification.material.materials.IMMaterials.ManaPearl;
+import static gtceuim.unification.material.materials.IMMaterials.ManaSteel;
+import static gtceuim.unification.material.materials.IMMaterials.MelodicAlloy;
+import static gtceuim.unification.material.materials.IMMaterials.MeteoricIron;
+import static gtceuim.unification.material.materials.IMMaterials.MysteriousCrystal;
+import static gtceuim.unification.material.materials.IMMaterials.Onyx;
+import static gtceuim.unification.material.materials.IMMaterials.PrescientCrystal;
+import static gtceuim.unification.material.materials.IMMaterials.PulsatingCrystal;
+import static gtceuim.unification.material.materials.IMMaterials.PulsatingIron;
+import static gtceuim.unification.material.materials.IMMaterials.RedstoneAlloy;
+import static gtceuim.unification.material.materials.IMMaterials.SkyStone;
+import static gtceuim.unification.material.materials.IMMaterials.Solar;
+import static gtceuim.unification.material.materials.IMMaterials.Soularium;
+import static gtceuim.unification.material.materials.IMMaterials.Starmetal;
+import static gtceuim.unification.material.materials.IMMaterials.StellarAlloy;
+import static gtceuim.unification.material.materials.IMMaterials.TerraSteel;
+import static gtceuim.unification.material.materials.IMMaterials.Thaumium;
+import static gtceuim.unification.material.materials.IMMaterials.VibrantAlloy;
+import static gtceuim.unification.material.materials.IMMaterials.VibrantCrystal;
+import static gtceuim.unification.material.materials.IMMaterials.VividAlloy;
+import static gtceuim.unification.material.materials.IMMaterials.Void;
+import static gtceuim.unification.material.materials.IMMaterials.VolcanicCrystal;
+import static gtceuim.unification.material.materials.IMMaterials.WeatherCrystal;
 
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.material.Material;
@@ -453,7 +571,7 @@ public class IntegrationMaterials {
 
         // Astral Sorcery
 
-        if (AstralSorcery.isModLoaded() && !disableAstralSorceryIntegration){
+        if (AstralSorcery.isModLoaded() && !disableAstralSorceryIntegration) {
             Aquamarine = new Material.Builder(33, gtceuimId("aquamarine"))
                     .dust()
                     .ore()
@@ -477,7 +595,7 @@ public class IntegrationMaterials {
         }
 
         // Botania
-        if (Botania.isModLoaded() && !disableBotaniaIntegration){
+        if (Botania.isModLoaded() && !disableBotaniaIntegration) {
             ManaSteel = new Material.Builder(35, gtceuimId("manasteel"))
                     .dust()
                     .ingot()
@@ -524,8 +642,7 @@ public class IntegrationMaterials {
                     .flags(GENERATE_ALL_GEM)
                     .color(0xFF2DEA)
                     .iconSet(DIAMOND)
-                    .build().setFormula("Ds");
-            ;
+                    .build().setFormula("Ds");;
 
             GaiaSpirit = new Material.Builder(42, gtceuimId("gaia_spirit"))
                     .dust()
@@ -566,7 +683,7 @@ public class IntegrationMaterials {
                     .build();
 
             // GalaxySpace
-            if (GalaxySpace.isModLoaded() && !disableGalaxySpaceIntegration){
+            if (GalaxySpace.isModLoaded() && !disableGalaxySpaceIntegration) {
                 Dolomite = new Material.Builder(46, gtceuimId("dolomite"))
                         .dust()
                         .gem(2)
@@ -608,7 +725,7 @@ public class IntegrationMaterials {
         }
 
         // Thaumcraft
-        if (Thaumcraft.isModLoaded() && !disableThaumcraftIntegration){
+        if (Thaumcraft.isModLoaded() && !disableThaumcraftIntegration) {
             Amber = new Material.Builder(50, gtceuimId("amber"))
                     .dust()
                     .gem(2)
@@ -623,7 +740,7 @@ public class IntegrationMaterials {
                     .dust()
                     .ingot()
                     .flags(GENERATE_ALL_METAL)
-                    .color(0x3b2453)
+                    .color(0x70308b)
                     .iconSet(THAUMIUM)
                     .build().setFormula("FeMa", true);
 

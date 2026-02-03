@@ -146,7 +146,7 @@ public class CompressorRecipes {
         }
 
         // Galaxy Space
-        if (GalaxySpace.isModLoaded() && !disableGalaxySpaceIntegration){
+        if (GalaxySpace.isModLoaded() && !disableGalaxySpaceIntegration) {
             COMPRESSOR_RECIPES.recipeBuilder()
                     .duration(300).EUt(2)
                     .input(gem, Dolomite, 9)

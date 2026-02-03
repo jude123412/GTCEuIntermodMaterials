@@ -16,9 +16,6 @@ import static gtceuim.gtceuimConfig.disableGalaxySpaceIntegration;
 import static gtceuim.gtceuimConfig.disableThaumcraftIntegration;
 import static gtceuim.unification.material.materials.IMMaterials.*;
 
-import hellfirepvp.astralsorcery.AstralSorcery;
-import morph.avaritia.Avaritia;
-
 public class IMOrePrefix {
 
     public static void init() {
