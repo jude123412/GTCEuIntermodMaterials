@@ -10,6 +10,7 @@ import static gtceuim.api.util.IMMods.Avaritia;
 import static gtceuim.api.util.IMMods.Botania;
 import static gtceuim.api.util.IMMods.CrazyAe;
 import static gtceuim.api.util.IMMods.EnderIo;
+import static gtceuim.api.util.IMMods.ExtraUtilities2;
 import static gtceuim.api.util.IMMods.GalaxySpace;
 import static gtceuim.api.util.IMMods.Thaumcraft;
 import static gtceuim.gtceuimConfig.disableAe2Integration;
@@ -19,6 +20,7 @@ import static gtceuim.gtceuimConfig.disableAvaritiaIntegration;
 import static gtceuim.gtceuimConfig.disableBotaniaIntegration;
 import static gtceuim.gtceuimConfig.disableCrazyAeIntegration;
 import static gtceuim.gtceuimConfig.disableEnderIoIntegration;
+import static gtceuim.gtceuimConfig.disableExtraUtilities2Integration;
 import static gtceuim.gtceuimConfig.disableGalaxySpaceIntegration;
 import static gtceuim.gtceuimConfig.disableThaumcraftIntegration;
 import static gtceuim.unification.material.materials.IMMaterials.Amber;
@@ -39,6 +41,7 @@ import static gtceuim.unification.material.materials.IMMaterials.FluixPearl;
 import static gtceuim.unification.material.materials.IMMaterials.InfinityCatalyst;
 import static gtceuim.unification.material.materials.IMMaterials.ManaDiamond;
 import static gtceuim.unification.material.materials.IMMaterials.ManaPearl;
+import static gtceuim.unification.material.materials.IMMaterials.Moon;
 import static gtceuim.unification.material.materials.IMMaterials.MysteriousCrystal;
 import static gtceuim.unification.material.materials.IMMaterials.Onyx;
 import static gtceuim.unification.material.materials.IMMaterials.PrescientCrystal;
@@ -222,6 +225,14 @@ public class CompressorRecipes {
                     .duration(300).EUt(2)
                     .input(gem, Ambrosium, 9)
                     .output(block, Ambrosium)
+                    .buildAndRegister();
+        }
+
+        if (ExtraUtilities2.isModLoaded() && !disableExtraUtilities2Integration) {
+            COMPRESSOR_RECIPES.recipeBuilder()
+                    .duration(300).EUt(2)
+                    .input(gem, Moon, 9)
+                    .output(block, Moon)
                     .buildAndRegister();
         }
     }

@@ -12,6 +12,7 @@ import static gtceuim.gtceuimConfig.disableCrazyAeIntegration;
 import static gtceuim.gtceuimConfig.disableDraconicEvolutionIntegration;
 import static gtceuim.gtceuimConfig.disableEnderIoEndergyIntegration;
 import static gtceuim.gtceuimConfig.disableEnderIoIntegration;
+import static gtceuim.gtceuimConfig.disableExtraUtilities2Integration;
 import static gtceuim.gtceuimConfig.disableGalacticraftIntegration;
 import static gtceuim.gtceuimConfig.disableGalaxySpaceIntegration;
 import static gtceuim.gtceuimConfig.disableThaumcraftIntegration;
@@ -178,9 +179,11 @@ public class IMOrePrefix {
         }
 
         // Galacticraft
-        if (GalacticraftCore.isModLoaded() && disableGalacticraftIntegration) {
+        if (GalacticraftCore.isModLoaded() && !disableGalacticraftIntegration) {
             ingot.setIgnored(MeteoricIron);
             ingot.setIgnored(Desh);
+
+            dust.setIgnored(Solar);
 
             block.setIgnored(MeteoricIron);
             block.setIgnored(Desh);
@@ -215,6 +218,21 @@ public class IMOrePrefix {
 
             block.setIgnored(Zanite);
             block.setIgnored(EnchantedGravitite);
+        }
+
+        if (ExtraUtilities2.isModLoaded() && !disableExtraUtilities2Integration) {
+            ingot.setIgnored(Unstable);
+            ingot.setIgnored(Demon);
+            ingot.setIgnored(Enchanted);
+            ingot.setIgnored(EvilInfusedIron);
+
+            gem.setIgnored(Moon);
+
+            dust.setIgnored(Lunar);
+
+            block.setIgnored(Demon);
+            block.setIgnored(Enchanted);
+            block.setIgnored(EvilInfusedIron);
         }
     }
 }

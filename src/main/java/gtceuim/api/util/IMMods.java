@@ -21,7 +21,8 @@ public enum IMMods {
     GalacticraftPlanets(Names.GALACTICRAFT_PLANETS),
     GalaxySpace(Names.GALAXY_SPACE),
     DraconicEvolution(Names.DRACONIC_EVOLUTION),
-    AetherLegacy(Names.AETHER_LEGACY);
+    AetherLegacy(Names.AETHER_LEGACY),
+    ExtraUtilities2(Names.EXTRA_UTILITIES_2);
 
     public static class Names {
 
@@ -41,6 +42,7 @@ public enum IMMods {
         public static final String GALAXY_SPACE = "galaxyspace";
         public static final String DRACONIC_EVOLUTION = "draconicevolution";
         public static final String AETHER_LEGACY = "aether_legacy";
+        public static final String EXTRA_UTILITIES_2 = "extrautils2";
     }
 
     private final String ID;

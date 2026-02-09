@@ -144,6 +144,14 @@ public class IMMaterials {
     public static Material Gravitite;
     public static Material EnchantedGravitite;
 
+    // Extra Utilities 2
+    public static Material Unstable;
+    public static Material Lunar;
+    public static Material Moon;
+    public static Material Demon;
+    public static Material Enchanted;
+    public static Material EvilInfusedIron;
+
     public static void init() {
         // Register Materials
         IMLogger.log.info("Beginning Material Registry");

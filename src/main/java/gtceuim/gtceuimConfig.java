@@ -69,4 +69,9 @@ public class gtceuimConfig {
             "Default: false" })
     @Config.RequiresMcRestart
     public static boolean disableEnderIoEndergyIntegration = false;
+
+    @Config.Comment({ "Disable to remove all Extra Utilities 2 Integration Materials and Recipes.",
+            "Default: false" })
+    @Config.RequiresMcRestart
+    public static boolean disableExtraUtilities2Integration = false;
 }
