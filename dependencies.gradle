@@ -42,17 +42,6 @@ dependencies {
     implementation rfg.deobf("curse.maven:codechicken-lib-1-8-242818:2779848") // CCL 3.2.3.358
     implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:5519022-deobf-5519023-sources-5519024") // GTCEU 2.8.10
 
-    // Soft Dependencies, Compile Only, Optional Mods
-    compileOnly rfg.deobf("curse.maven:avaritia-1-1x-unofficial-1165010:6206823") // Avaritia 3.3.0.44
-    compileOnly rfg.deobf("curse.maven:ae2-unofficial-extended-life-0.56.6-570458:5411078") // AE2 UEL 0.56.6
-    compileOnly rfg.deobf("curse.maven:crazy-ae-0.3-1111042:5845065") // Crazy AE 0.56.6
-    compileOnly rfg.deobf("curse.maven:thaumcraft-1.12.2-6.1.beta-26-223628:2629023") // Thaumcraft 6.1.beta-26
-    compileOnly rfg.deobf("curse.maven:botania-r-1.10-364.4-225643:3330934") // Botania 1.0-364.4
-    compileOnly rfg.deobf("curse.maven:astral-scorcery-1.12.2-1.10.27-241721:3044416") // Astral Scorcery 1.10.27
-    compileOnly rfg.deobf("curse.maven:blood-magic-1.12.2-2.4.3-105-224791:2822288") // Blood Magic 2.4.3-105
-    compileOnly rfg.deobf("curse.maven:galacticraft-4.0.6-564236:6364107") // Galacticraft 4.0.7
-    compileOnly rfg.deobf("curse.maven:galaxy-space-2.2.0-238770:7005609") // Galaxy Space 2.2.0
-
     // Core mods needed for other Mods, Not a dependency
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:baubles-1.12-1.5.2-227083:2518667") // Baubles
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:guide-api-1.12-2.1.8-63-228832:2645992") // Guide API
@@ -62,6 +51,8 @@ dependencies {
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:wanion-lib-2.91-253043:4623135") // Wanion Lib 2.91
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:redstone-flux-2.1.1.1-270789:2920436") // Redstone Flux 2.1.1.1
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:brandons-core-2.4.20.162-231382:3408276") // Brandons Core 2.4.20.162
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:cofh-core-4.6.6.1-69162:2920433") // CoFH Core 4.6.6.1
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:cofh-world-1.4.0.1-271384:2920434") // CoFH World 1.4.0.1
 
     // Mod Dependencies
     // Uncomment any of these to test in-game
@@ -103,6 +94,12 @@ dependencies {
     // Extra Utilities 2
 //    runtimeOnlyNonPublishable rfg.deobf("curse.maven:extra-utilities-2-1.9.9-225561:2678374") // Extra Utilities 2 1.9.9
     // Extra Utilities 2
+
+    // Thermal Expansion
+        runtimeOnlyNonPublishable rfg.deobf("curse.maven:thermal-expansion-5.5.7.1-69163:2926431") // Thermal Expansion 5.5.7.1
+        runtimeOnlyNonPublishable rfg.deobf("curse.maven:thermal-foundation-2.6.7.1-222880:2926428") // Thermal Foundation 2.6.7.1
+    // Thermal Expansion
+
 
     // Galacticraft
 //    runtimeOnlyNonPublishable rfg.deobf("curse.maven:galacticraft-4.0.6-564236:6364107") // Galacticraft 4.0.7

@@ -9,6 +9,7 @@ import static gtceuim.gtceuimConfig.disableEnderIoIntegration;
 import static gtceuim.gtceuimConfig.disableGalacticraftIntegration;
 import static gtceuim.gtceuimConfig.disableGalaxySpaceIntegration;
 import static gtceuim.gtceuimConfig.disableThaumcraftIntegration;
+import static gtceuim.gtceuimConfig.disableThermalExpansionIntegration;
 
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -132,6 +133,21 @@ public class OreDictionaryLoader {
         if (AetherLegacy.isModLoaded() && !disableAetherModIntegration) {
             OreDictionary.registerOre("gemAmbrosium",
                     IMUtility.getItemStackFromString("aether_legacy", "ambrosium_shard", 0));
+        }
+
+        if (ThermalExpansion.isModLoaded() && !disableThermalExpansionIntegration) {
+            OreDictionary.registerOre("ingotAluminium",
+                    IMUtility.getItemStackFromString("thermalfoundation", "material", 132));
+            OreDictionary.registerOre("dustAluminium",
+                    IMUtility.getItemStackFromString("thermalfoundation", "material", 68));
+            OreDictionary.registerOre("nuggetAluminium",
+                    IMUtility.getItemStackFromString("thermalfoundation", "material", 196));
+            OreDictionary.registerOre("blockAluminium",
+                    IMUtility.getItemStackFromString("thermalfoundation", "storage", 4));
+            OreDictionary.registerOre("gearAluminium",
+                    IMUtility.getItemStackFromString("thermalfoundation", "material", 260));
+            OreDictionary.registerOre("plateAluminium",
+                    IMUtility.getItemStackFromString("thermalfoundation", "material", 324));
         }
     }
 }

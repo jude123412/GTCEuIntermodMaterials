@@ -74,4 +74,9 @@ public class gtceuimConfig {
             "Default: false" })
     @Config.RequiresMcRestart
     public static boolean disableExtraUtilities2Integration = false;
+
+    @Config.Comment({ "Disable to remove all Thermal Expansion Integration Materials and Recipes.",
+            "Default: false" })
+    @Config.RequiresMcRestart
+    public static boolean disableThermalExpansionIntegration = false;
 }

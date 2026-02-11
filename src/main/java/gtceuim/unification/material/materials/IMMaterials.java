@@ -152,6 +152,21 @@ public class IMMaterials {
     public static Material Enchanted;
     public static Material EvilInfusedIron;
 
+    // Thermal Expansion/Foundation
+    public static Material ManaInfused;
+    public static Material Constantan;
+    public static Material Signalum;
+    public static Material Lumium;
+    public static Material Enderium;
+    public static Material Pyrotheum;
+    public static Material Cryotheum;
+    public static Material Aerotheum;
+    public static Material Petrotheum;
+    public static Material Mana;
+    public static Material Blizz;
+    public static Material Blitz;
+    public static Material Basalz;
+
     public static void init() {
         // Register Materials
         IMLogger.log.info("Beginning Material Registry");
