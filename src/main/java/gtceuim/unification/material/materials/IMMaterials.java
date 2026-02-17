@@ -170,7 +170,7 @@ public class IMMaterials {
     // Tinkers Construct
     public static Material Ardite;
     public static Material Manyullyn;
-    public static Material Kniteslime;
+    public static Material Knightslime;
     public static Material Pigiron;
     public static Material SearedBrick;
 

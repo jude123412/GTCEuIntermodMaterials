@@ -97,8 +97,8 @@ dependencies {
     // Extra Utilities 2
 
     // Thermal Expansion
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:thermal-expansion-5.5.7.1-69163:2926431") // Thermal Expansion 5.5.7.1
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:thermal-foundation-2.6.7.1-222880:2926428") // Thermal Foundation 2.6.7.1
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:thermal-expansion-5.5.7.1-69163:2926431") // Thermal Expansion 5.5.7.1
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:thermal-foundation-2.6.7.1-222880:2926428") // Thermal Foundation 2.6.7.1
     // Thermal Expansion
 
     // Tinkers Construct

@@ -17,6 +17,7 @@ import static gtceuim.gtceuimConfig.disableGalacticraftIntegration;
 import static gtceuim.gtceuimConfig.disableGalaxySpaceIntegration;
 import static gtceuim.gtceuimConfig.disableThaumcraftIntegration;
 import static gtceuim.gtceuimConfig.disableThermalExpansionIntegration;
+import static gtceuim.gtceuimConfig.disableTinkersConstructIntegration;
 import static gtceuim.unification.material.materials.IMMaterials.*;
 
 public class IMOrePrefix {
@@ -284,6 +285,27 @@ public class IMOrePrefix {
             block.setIgnored(Signalum);
             block.setIgnored(Lumium);
             block.setIgnored(Enderium);
+        }
+
+        if (TinkersConstruct.isModLoaded() && !disableTinkersConstructIntegration) {
+            ingot.setIgnored(Cobalt);
+            ingot.setIgnored(Ardite);
+            ingot.setIgnored(Manyullyn);
+            ingot.setIgnored(Knightslime);
+            ingot.setIgnored(Pigiron);
+            ingot.setIgnored(SearedBrick);
+
+            nugget.setIgnored(Cobalt);
+            nugget.setIgnored(Ardite);
+            nugget.setIgnored(Manyullyn);
+            nugget.setIgnored(Knightslime);
+            nugget.setIgnored(Pigiron);
+
+            block.setIgnored(Cobalt);
+            block.setIgnored(Ardite);
+            block.setIgnored(Manyullyn);
+            block.setIgnored(Knightslime);
+            block.setIgnored(Pigiron);
         }
     }
 }

@@ -79,4 +79,9 @@ public class gtceuimConfig {
             "Default: false" })
     @Config.RequiresMcRestart
     public static boolean disableThermalExpansionIntegration = false;
+
+    @Config.Comment({ "Disable to remove all Tinkers Construct Integration Materials and Recipes.",
+            "Default: false" })
+    @Config.RequiresMcRestart
+    public static boolean disableTinkersConstructIntegration = false;
 }

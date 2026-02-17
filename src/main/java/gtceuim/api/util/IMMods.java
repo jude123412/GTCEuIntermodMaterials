@@ -23,7 +23,8 @@ public enum IMMods {
     DraconicEvolution(Names.DRACONIC_EVOLUTION),
     AetherLegacy(Names.AETHER_LEGACY),
     ExtraUtilities2(Names.EXTRA_UTILITIES_2),
-    ThermalExpansion(Names.THERMAL_EXPANSION);
+    ThermalExpansion(Names.THERMAL_EXPANSION),
+    TinkersConstruct(Names.TINKERS_CONSTRUCT);
 
     public static class Names {
 
@@ -45,6 +46,7 @@ public enum IMMods {
         public static final String AETHER_LEGACY = "aether_legacy";
         public static final String EXTRA_UTILITIES_2 = "extrautils2";
         public static final String THERMAL_EXPANSION = "thermalexpansion";
+        public static final String TINKERS_CONSTRUCT = "tconstruct";
     }
 
     private final String ID;
