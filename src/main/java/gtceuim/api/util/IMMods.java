@@ -25,7 +25,6 @@ public enum IMMods {
     ExtraUtilities2(Names.EXTRA_UTILITIES_2),
     ThermalExpansion(Names.THERMAL_EXPANSION);
 
-
     public static class Names {
 
         public static final String THAUMCRAFT = "thaumcraft";

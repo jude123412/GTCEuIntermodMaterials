@@ -148,6 +148,12 @@ public class OreDictionaryLoader {
                     IMUtility.getItemStackFromString("thermalfoundation", "material", 260));
             OreDictionary.registerOre("plateAluminium",
                     IMUtility.getItemStackFromString("thermalfoundation", "material", 324));
+            OreDictionary.registerOre("stickBlizz",
+                    IMUtility.getItemStackFromString("thermalfoundation", "material", 2048));
+            OreDictionary.registerOre("stickBlitz",
+                    IMUtility.getItemStackFromString("thermalfoundation", "material", 2050));
+            OreDictionary.registerOre("stickBasalz",
+                    IMUtility.getItemStackFromString("thermalfoundation", "material", 2052));
         }
     }
 }

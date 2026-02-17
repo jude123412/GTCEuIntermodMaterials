@@ -16,6 +16,7 @@ import static gtceuim.gtceuimConfig.disableExtraUtilities2Integration;
 import static gtceuim.gtceuimConfig.disableGalacticraftIntegration;
 import static gtceuim.gtceuimConfig.disableGalaxySpaceIntegration;
 import static gtceuim.gtceuimConfig.disableThaumcraftIntegration;
+import static gtceuim.gtceuimConfig.disableThermalExpansionIntegration;
 import static gtceuim.unification.material.materials.IMMaterials.*;
 
 public class IMOrePrefix {
@@ -233,6 +234,56 @@ public class IMOrePrefix {
             block.setIgnored(Demon);
             block.setIgnored(Enchanted);
             block.setIgnored(EvilInfusedIron);
+        }
+
+        if (ThermalExpansion.isModLoaded() && !disableThermalExpansionIntegration) {
+            dust.setIgnored(ManaInfused);
+            dust.setIgnored(Constantan);
+            dust.setIgnored(Signalum);
+            dust.setIgnored(Lumium);
+            dust.setIgnored(Enderium);
+            dust.setIgnored(Pyrotheum);
+            dust.setIgnored(Cryotheum);
+            dust.setIgnored(Aerotheum);
+            dust.setIgnored(Petrotheum);
+            dust.setIgnored(Mana);
+            dust.setIgnored(Blizz);
+            dust.setIgnored(Blitz);
+            dust.setIgnored(Basalz);
+
+            ingot.setIgnored(ManaInfused);
+            ingot.setIgnored(Constantan);
+            ingot.setIgnored(Signalum);
+            ingot.setIgnored(Lumium);
+            ingot.setIgnored(Enderium);
+
+            nugget.setIgnored(ManaInfused);
+            nugget.setIgnored(Constantan);
+            nugget.setIgnored(Signalum);
+            nugget.setIgnored(Lumium);
+            nugget.setIgnored(Enderium);
+
+            stick.setIgnored(Blizz);
+            stick.setIgnored(Blitz);
+            stick.setIgnored(Basalz);
+
+            gear.setIgnored(ManaInfused);
+            gear.setIgnored(Constantan);
+            gear.setIgnored(Signalum);
+            gear.setIgnored(Lumium);
+            gear.setIgnored(Enderium);
+
+            plate.setIgnored(ManaInfused);
+            plate.setIgnored(Constantan);
+            plate.setIgnored(Signalum);
+            plate.setIgnored(Lumium);
+            plate.setIgnored(Enderium);
+
+            block.setIgnored(ManaInfused);
+            block.setIgnored(Constantan);
+            block.setIgnored(Signalum);
+            block.setIgnored(Lumium);
+            block.setIgnored(Enderium);
         }
     }
 }

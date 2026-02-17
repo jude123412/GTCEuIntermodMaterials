@@ -167,6 +167,13 @@ public class IMMaterials {
     public static Material Blitz;
     public static Material Basalz;
 
+    // Tinkers Construct
+    public static Material Ardite;
+    public static Material Manyullyn;
+    public static Material Kniteslime;
+    public static Material Pigiron;
+    public static Material SearedBrick;
+
     public static void init() {
         // Register Materials
         IMLogger.log.info("Beginning Material Registry");

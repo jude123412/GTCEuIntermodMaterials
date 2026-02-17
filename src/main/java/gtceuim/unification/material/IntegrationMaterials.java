@@ -13,38 +13,17 @@ import static gregtech.api.GTValues.UIV;
 import static gregtech.api.GTValues.ULV;
 import static gregtech.api.GTValues.V;
 import static gregtech.api.GTValues.VA;
-import static gregtech.api.unification.material.Materials.Aluminium;
-import static gregtech.api.unification.material.Materials.Ash;
-import static gregtech.api.unification.material.Materials.Beryllium;
-import static gregtech.api.unification.material.Materials.Calcium;
-import static gregtech.api.unification.material.Materials.Carbon;
 import static gregtech.api.unification.material.Materials.CertusQuartz;
-import static gregtech.api.unification.material.Materials.Clay;
-import static gregtech.api.unification.material.Materials.Diamond;
 import static gregtech.api.unification.material.Materials.Electrotine;
-import static gregtech.api.unification.material.Materials.Emerald;
-import static gregtech.api.unification.material.Materials.EnderPearl;
-import static gregtech.api.unification.material.Materials.Endstone;
 import static gregtech.api.unification.material.Materials.Glowstone;
-import static gregtech.api.unification.material.Materials.Gold;
 import static gregtech.api.unification.material.Materials.GraniteBlack;
-import static gregtech.api.unification.material.Materials.Hydrogen;
-import static gregtech.api.unification.material.Materials.Iron;
-import static gregtech.api.unification.material.Materials.Lapis;
-import static gregtech.api.unification.material.Materials.Magnesium;
 import static gregtech.api.unification.material.Materials.NetherQuartz;
 import static gregtech.api.unification.material.Materials.NetherStar;
 import static gregtech.api.unification.material.Materials.Neutronium;
-import static gregtech.api.unification.material.Materials.Obsidian;
-import static gregtech.api.unification.material.Materials.Oxygen;
-import static gregtech.api.unification.material.Materials.QuartzSand;
 import static gregtech.api.unification.material.Materials.Redstone;
 import static gregtech.api.unification.material.Materials.Sapphire;
-import static gregtech.api.unification.material.Materials.Silicon;
-import static gregtech.api.unification.material.Materials.Silver;
-import static gregtech.api.unification.material.Materials.Steel;
-import static gregtech.api.unification.material.Materials.Tin;
 import static gregtech.api.unification.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
+import static gregtech.api.unification.material.info.MaterialFlags.GENERATE_ROD;
 import static gregtech.api.unification.material.info.MaterialFlags.NO_SMELTING;
 import static gregtech.api.unification.material.info.MaterialIconSet.DIAMOND;
 import static gregtech.api.unification.material.info.MaterialIconSet.DULL;
@@ -78,6 +57,7 @@ import static gtceuim.api.util.IMMods.ExtraUtilities2;
 import static gtceuim.api.util.IMMods.GalacticraftCore;
 import static gtceuim.api.util.IMMods.GalaxySpace;
 import static gtceuim.api.util.IMMods.Thaumcraft;
+import static gtceuim.api.util.IMMods.ThermalExpansion;
 import static gtceuim.api.util.IMUtility.gtceuimId;
 import static gtceuim.gtceuimConfig.disableAe2Integration;
 import static gtceuim.gtceuimConfig.disableAetherModIntegration;
@@ -92,14 +72,21 @@ import static gtceuim.gtceuimConfig.disableExtraUtilities2Integration;
 import static gtceuim.gtceuimConfig.disableGalacticraftIntegration;
 import static gtceuim.gtceuimConfig.disableGalaxySpaceIntegration;
 import static gtceuim.gtceuimConfig.disableThaumcraftIntegration;
+import static gtceuim.gtceuimConfig.disableThermalExpansionIntegration;
+import static gtceuim.unification.material.materials.IMMaterials.Aerotheum;
 import static gtceuim.unification.material.materials.IMMaterials.Amber;
 import static gtceuim.unification.material.materials.IMMaterials.Ambrosium;
 import static gtceuim.unification.material.materials.IMMaterials.Aquamarine;
 import static gtceuim.unification.material.materials.IMMaterials.AwakenedDraconium;
+import static gtceuim.unification.material.materials.IMMaterials.Basalz;
+import static gtceuim.unification.material.materials.IMMaterials.Blitz;
+import static gtceuim.unification.material.materials.IMMaterials.Blizz;
 import static gtceuim.unification.material.materials.IMMaterials.ChargedCertusQuartz;
 import static gtceuim.unification.material.materials.IMMaterials.ConductiveIron;
+import static gtceuim.unification.material.materials.IMMaterials.Constantan;
 import static gtceuim.unification.material.materials.IMMaterials.CosmicNeutronium;
 import static gtceuim.unification.material.materials.IMMaterials.CrudeSteel;
+import static gtceuim.unification.material.materials.IMMaterials.Cryotheum;
 import static gtceuim.unification.material.materials.IMMaterials.CrystalMatrix;
 import static gtceuim.unification.material.materials.IMMaterials.CrystallineAlloy;
 import static gtceuim.unification.material.materials.IMMaterials.CrystallinePinkSlime;
@@ -121,6 +108,7 @@ import static gtceuim.unification.material.materials.IMMaterials.Enchanted;
 import static gtceuim.unification.material.materials.IMMaterials.EnchantedGravitite;
 import static gtceuim.unification.material.materials.IMMaterials.EndSteel;
 import static gtceuim.unification.material.materials.IMMaterials.EnderCrystal;
+import static gtceuim.unification.material.materials.IMMaterials.Enderium;
 import static gtceuim.unification.material.materials.IMMaterials.EnergeticAlloy;
 import static gtceuim.unification.material.materials.IMMaterials.EnergeticSilver;
 import static gtceuim.unification.material.materials.IMMaterials.EnticingCrystal;
@@ -135,8 +123,11 @@ import static gtceuim.unification.material.materials.IMMaterials.GaiaSpirit;
 import static gtceuim.unification.material.materials.IMMaterials.Gravitite;
 import static gtceuim.unification.material.materials.IMMaterials.Infinity;
 import static gtceuim.unification.material.materials.IMMaterials.InfinityCatalyst;
+import static gtceuim.unification.material.materials.IMMaterials.Lumium;
 import static gtceuim.unification.material.materials.IMMaterials.Lunar;
+import static gtceuim.unification.material.materials.IMMaterials.Mana;
 import static gtceuim.unification.material.materials.IMMaterials.ManaDiamond;
+import static gtceuim.unification.material.materials.IMMaterials.ManaInfused;
 import static gtceuim.unification.material.materials.IMMaterials.ManaPearl;
 import static gtceuim.unification.material.materials.IMMaterials.ManaSteel;
 import static gtceuim.unification.material.materials.IMMaterials.MelodicAlloy;
@@ -144,10 +135,13 @@ import static gtceuim.unification.material.materials.IMMaterials.MeteoricIron;
 import static gtceuim.unification.material.materials.IMMaterials.Moon;
 import static gtceuim.unification.material.materials.IMMaterials.MysteriousCrystal;
 import static gtceuim.unification.material.materials.IMMaterials.Onyx;
+import static gtceuim.unification.material.materials.IMMaterials.Petrotheum;
 import static gtceuim.unification.material.materials.IMMaterials.PrescientCrystal;
 import static gtceuim.unification.material.materials.IMMaterials.PulsatingCrystal;
 import static gtceuim.unification.material.materials.IMMaterials.PulsatingIron;
+import static gtceuim.unification.material.materials.IMMaterials.Pyrotheum;
 import static gtceuim.unification.material.materials.IMMaterials.RedstoneAlloy;
+import static gtceuim.unification.material.materials.IMMaterials.Signalum;
 import static gtceuim.unification.material.materials.IMMaterials.SkyStone;
 import static gtceuim.unification.material.materials.IMMaterials.Solar;
 import static gtceuim.unification.material.materials.IMMaterials.Soularium;
@@ -166,7 +160,6 @@ import static gtceuim.unification.material.materials.IMMaterials.Zanite;
 
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.properties.BlastProperty;
 import gtceuim.api.unification.IMElements;
 
 public class IntegrationMaterials {
@@ -180,7 +173,6 @@ public class IntegrationMaterials {
                     .ore(true)
                     .addOreByproducts(NetherQuartz, CertusQuartz, Redstone)
                     .flags(GENERATE_ALL_GEM, DISABLE_DECOMPOSITION)
-                    .components(Silicon, 1, Oxygen, 2)
                     .iconSet(CHARGED_CERTUS_QUARTZ)
                     .build();
 
@@ -188,7 +180,6 @@ public class IntegrationMaterials {
                     .dust()
                     .gem(2)
                     .flags(GENERATE_ALL_GEM)
-                    .components(ChargedCertusQuartz, 1, CertusQuartz, 1, Redstone, 1)
                     .color(0x832FBA)
                     .iconSet(FLUIX)
                     .build();
@@ -197,7 +188,6 @@ public class IntegrationMaterials {
                     .dust()
                     .gem(2)
                     .flags(GENERATE_ALL_GEM)
-                    .components(Fluix, 1, EnderPearl, 1)
                     .iconSet(FLUIX_PEARL)
                     .color(0x832FBA)
                     .build();
@@ -216,7 +206,6 @@ public class IntegrationMaterials {
                         .dust()
                         .gem(2)
                         .flags(GENERATE_ALL_GEM)
-                        .components(FluixPearl, 1, CertusQuartz, 1, Fluix, 1)
                         .color(0xFF007F)
                         .iconSet(FLUIXILIZED)
                         .build();
@@ -238,10 +227,6 @@ public class IntegrationMaterials {
                     .ingot()
                     .ore()
                     .flags(GENERATE_ALL_METAL)
-                    .blast(b -> b
-                            .temp(10000, BlastProperty.GasTier.LOW)
-                            .blastStats(VA[UEV], 8000)
-                            .vacuumStats(VA[UHV]))
                     .color(0x1e1d1f)
                     .iconSet(COSMICNEUTRONIUM)
                     .element(IMElements.CosmicNeutronium)
@@ -260,10 +245,6 @@ public class IntegrationMaterials {
             Infinity = new Material.Builder(8, gtceuimId("infinity"))
                     .dust()
                     .ingot()
-                    .blast(b -> b
-                            .temp(10000, BlastProperty.GasTier.LOW)
-                            .blastStats(VA[UIV], 16000)
-                            .vacuumStats(VA[UEV]))
                     .flags(GENERATE_ALL_METAL)
                     .iconSet(INFINITY)
                     .element(IMElements.Infinity)
@@ -279,10 +260,6 @@ public class IntegrationMaterials {
                     .ore()
                     .liquid(new FluidBuilder().temperature(5555))
                     .flags(GENERATE_ALL_METAL)
-                    .blast(b -> b
-                            .temp(5555, BlastProperty.GasTier.LOW)
-                            .blastStats(VA[LuV], 2560)
-                            .vacuumStats(VA[MV]))
                     .iconSet(SHINY)
                     .element(IMElements.Draconium)
                     .cableProperties(V[UEV], 4, (int) V[IV])
@@ -295,10 +272,6 @@ public class IntegrationMaterials {
                     .ore()
                     .liquid(new FluidBuilder().temperature(7777))
                     .flags(GENERATE_ALL_METAL)
-                    .blast(b -> b
-                            .temp(7777, BlastProperty.GasTier.LOW)
-                            .blastStats(VA[LuV], 2560)
-                            .vacuumStats(VA[MV]))
                     .iconSet(SHINY)
                     .element(IMElements.AwakenedDraconium)
                     .cableProperties(V[UIV], 4, (int) V[LuV])
@@ -313,10 +286,6 @@ public class IntegrationMaterials {
                     .ingot()
                     .liquid(new FluidBuilder().temperature(1688))
                     .flags(GENERATE_ALL_METAL)
-                    .blast(b -> b
-                            .temp(1688, BlastProperty.GasTier.LOW)
-                            .blastStats(VA[MV], 1100))
-                    .components(Steel, 1, Silicon, 1)
                     .color(0x999999)
                     .iconSet(SHINY)
                     .build();
@@ -326,10 +295,6 @@ public class IntegrationMaterials {
                     .ingot()
                     .liquid(new FluidBuilder().temperature(2100))
                     .flags(GENERATE_ALL_METAL)
-                    .blast(b -> b
-                            .temp(2100, BlastProperty.GasTier.LOW)
-                            .blastStats(VA[MV], 1680))
-                    .components(Gold, 1, Redstone, 1, Glowstone, 1)
                     .color(0xFF7402)
                     .iconSet(SHINY)
                     .cableProperties(V[MV], 4, 2, false)
@@ -340,10 +305,6 @@ public class IntegrationMaterials {
                     .ingot()
                     .liquid(new FluidBuilder().temperature(2950))
                     .flags(GENERATE_ALL_METAL)
-                    .blast(b -> b
-                            .temp(2950, BlastProperty.GasTier.LOW)
-                            .blastStats(VA[HV], 2052))
-                    .components(EnergeticAlloy, 1, EnderPearl, 1)
                     .color(0xBEFF1C)
                     .iconSet(SHINY)
                     .cableProperties(V[EV], 8, 8, false)
@@ -354,10 +315,6 @@ public class IntegrationMaterials {
                     .ingot()
                     .liquid(new FluidBuilder().temperature(1750))
                     .flags(GENERATE_ALL_METAL)
-                    .blast(b -> b
-                            .temp(1750, BlastProperty.GasTier.LOW)
-                            .blastStats(VA[MV], 860))
-                    .components(ElectricalSteel, 1, Redstone, 1, Silicon, 1)
                     .color(0xCC3030)
                     .iconSet(SHINY)
                     .cableProperties(32, 1, 0, false)
@@ -368,10 +325,6 @@ public class IntegrationMaterials {
                     .ingot()
                     .liquid(new FluidBuilder().temperature(1555))
                     .flags(GENERATE_ALL_METAL)
-                    .blast(b -> b
-                            .temp(1555, BlastProperty.GasTier.LOW)
-                            .blastStats(VA[MV], 900))
-                    .components(RedstoneAlloy, 1, Steel, 1, Redstone, 1)
                     .color(0xFFB4A5)
                     .iconSet(SHINY)
                     .cableProperties(32, 2, 1)
@@ -382,10 +335,6 @@ public class IntegrationMaterials {
                     .ingot()
                     .liquid(new FluidBuilder().temperature(1720))
                     .flags(GENERATE_ALL_METAL)
-                    .blast(b -> b
-                            .temp(1720, BlastProperty.GasTier.LOW)
-                            .blastStats(VA[MV], 625))
-                    .components(EnderPearl, 1, Steel, 1)
                     .color(0x9AFFB1)
                     .iconSet(SHINY)
                     .cableProperties(8, 1, 0, false)
@@ -396,7 +345,6 @@ public class IntegrationMaterials {
                     .gem(2)
                     .color(0x3DFF9E)
                     .flags(GENERATE_ALL_GEM)
-                    .components(Diamond, 1, PulsatingIron, 1)
                     .iconSet(EMERALD)
                     .build();
 
@@ -405,10 +353,6 @@ public class IntegrationMaterials {
                     .ingot()
                     .liquid(new FluidBuilder().temperature(1690))
                     .flags(GENERATE_ALL_METAL)
-                    .blast(b -> b
-                            .temp(1690, BlastProperty.GasTier.LOW)
-                            .blastStats(VA[MV], 1200))
-                    .components(Steel, 1, Obsidian, 1)
                     .color(0x4C4C4C)
                     .iconSet(SHINY)
                     .build();
@@ -418,10 +362,6 @@ public class IntegrationMaterials {
                     .ingot()
                     .liquid(new FluidBuilder().temperature(2280))
                     .flags(GENERATE_ALL_METAL, DISABLE_DECOMPOSITION)
-                    .components(Gold, 1, Ash, 1)
-                    .blast(b -> b
-                            .temp(2280, BlastProperty.GasTier.LOW)
-                            .blastStats(VA[MV], 1100))
                     .color(0x7A502E)
                     .iconSet(SHINY)
                     .build();
@@ -432,10 +372,6 @@ public class IntegrationMaterials {
                         .ingot()
                         .liquid(new FluidBuilder().temperature(3000))
                         .flags(GENERATE_ALL_METAL)
-                        .components(DarkSteel, 1, Endstone, 1)
-                        .blast(b -> b
-                                .temp(3000, BlastProperty.GasTier.LOW)
-                                .blastStats(VA[HV], 1100))
                         .color(0xE5DB8B)
                         .iconSet(SHINY)
                         .build();
@@ -445,10 +381,6 @@ public class IntegrationMaterials {
                         .ingot()
                         .liquid(new FluidBuilder().temperature(1300))
                         .flags(GENERATE_ALL_METAL, DISABLE_DECOMPOSITION)
-                        .components(Clay, 1, QuartzSand, 1, Tin, 1)
-                        .blast(b -> b
-                                .temp(1300, BlastProperty.GasTier.LOW)
-                                .blastStats(VA[LV], 651))
                         .color(0xCCC3B1)
                         .iconSet(SHINY)
                         .cableProperties(V[ULV], 1, 1, false)
@@ -459,10 +391,6 @@ public class IntegrationMaterials {
                         .ingot()
                         .liquid(new FluidBuilder().temperature(3820))
                         .flags(GENERATE_ALL_METAL)
-                        .components(Gold, 1, PulsatingCrystal, 1)
-                        .blast(b -> b
-                                .temp(3820, BlastProperty.GasTier.LOW)
-                                .blastStats(VA[EV], 2872))
                         .color(0x91FFFF)
                         .iconSet(SHINY)
                         .cableProperties(V[IV], 16, 32, false)
@@ -473,10 +401,6 @@ public class IntegrationMaterials {
                         .ingot()
                         .liquid(new FluidBuilder().temperature(3290))
                         .flags(GENERATE_ALL_METAL, DISABLE_DECOMPOSITION)
-                        .components(EndSteel, 1)
-                        .blast(b -> b
-                                .temp(3290, BlastProperty.GasTier.LOW)
-                                .blastStats(VA[HV], 2490))
                         .color(0xB26EB2)
                         .iconSet(SHINY)
                         .cableProperties(131072, 32, 128, false)
@@ -487,10 +411,6 @@ public class IntegrationMaterials {
                         .ingot()
                         .liquid(new FluidBuilder().temperature(3890))
                         .flags(GENERATE_ALL_METAL)
-                        .components(MelodicAlloy, 1, CrystallineAlloy, 1)
-                        .blast(b -> b
-                                .temp(4890, BlastProperty.GasTier.LOW)
-                                .blastStats(VA[EV], 1100))
                         .color(0xFF99EF)
                         .iconSet(SHINY)
                         .cableProperties(V[LuV], 24, 64, false)
@@ -501,10 +421,6 @@ public class IntegrationMaterials {
                         .ingot()
                         .liquid(new FluidBuilder().temperature(2085))
                         .flags(GENERATE_ALL_METAL)
-                        .blast(b -> b
-                                .temp(2085, BlastProperty.GasTier.LOW)
-                                .blastStats(VA[MV], 1680))
-                        .components(Silver, 1, Redstone, 1, Glowstone, 1)
                         .color(0x639ECC)
                         .iconSet(SHINY)
                         .cableProperties(V[HV], 4, 8, false)
@@ -515,10 +431,6 @@ public class IntegrationMaterials {
                         .ingot()
                         .liquid(new FluidBuilder().temperature(2925))
                         .flags(GENERATE_ALL_METAL)
-                        .blast(b -> b
-                                .temp(2925, BlastProperty.GasTier.LOW)
-                                .blastStats(VA[HV], 2052))
-                        .components(EnergeticSilver, 1, EnderPearl, 1)
                         .color(0x7AE6FF)
                         .iconSet(SHINY)
                         .build();
@@ -528,11 +440,6 @@ public class IntegrationMaterials {
                         .ingot()
                         .liquid(new FluidBuilder().temperature(5480))
                         .flags(GENERATE_ALL_METAL, DISABLE_DECOMPOSITION)
-                        .components(VividAlloy, 1, VibrantAlloy, 1, CrystallinePinkSlime, 1, NetherStar, 1)
-                        .blast(b -> b
-                                .temp(5480, BlastProperty.GasTier.LOW)
-                                .blastStats(VA[IV], 9950)
-                                .vacuumStats(VA[EV] * 2, 2400))
                         .color(0xDBFFFF)
                         .iconSet(SHINY)
                         .cableProperties(V[MAX], 4, 0, false)
@@ -544,7 +451,6 @@ public class IntegrationMaterials {
                     .gem(2)
                     .color(0x4FA045)
                     .flags(GENERATE_ALL_GEM)
-                    .components(Emerald, 1, VibrantAlloy, 1)
                     .iconSet(EMERALD)
                     .build();
 
@@ -553,7 +459,6 @@ public class IntegrationMaterials {
                     .gem(2)
                     .color(0x3A7C27)
                     .flags(GENERATE_ALL_GEM)
-                    .components(VibrantCrystal, 1)
                     .iconSet(EMERALD)
                     .build();
 
@@ -562,7 +467,6 @@ public class IntegrationMaterials {
                     .gem(2)
                     .color(0x509375)
                     .flags(GENERATE_ALL_GEM, DISABLE_DECOMPOSITION)
-                    .components(Emerald, 1)
                     .iconSet(EMERALD)
                     .build();
 
@@ -571,7 +475,6 @@ public class IntegrationMaterials {
                     .gem(2)
                     .color(0x4F1F60)
                     .flags(GENERATE_ALL_GEM)
-                    .components(PulsatingCrystal, 2, VibrantCrystal, 2, EnderCrystal, 1)
                     .iconSet(EMERALD)
                     .build();
 
@@ -580,7 +483,6 @@ public class IntegrationMaterials {
                     .gem(2)
                     .color(0x49A562)
                     .flags(GENERATE_ALL_GEM, DISABLE_DECOMPOSITION)
-                    .components(VibrantCrystal, 1)
                     .iconSet(EMERALD)
                     .build();
         }
@@ -594,7 +496,6 @@ public class IntegrationMaterials {
                     .gem(2)
                     .addOreByproducts(Electrotine, Sapphire, Glowstone)
                     .flags(GENERATE_ALL_GEM)
-                    .components(Beryllium, 3, Aluminium, 2, Silicon, 6, Oxygen, 18)
                     .color(0x008EFF)
                     .iconSet(DIAMOND)
                     .build();
@@ -607,7 +508,7 @@ public class IntegrationMaterials {
                     .flags(GENERATE_ALL_METAL)
                     .color(0x2500D1)
                     .iconSet(STARMETAL)
-                    .build().setFormula("Sp?");
+                    .build();
         }
 
         // Botania
@@ -618,7 +519,7 @@ public class IntegrationMaterials {
                     .flags(GENERATE_ALL_METAL, NO_SMELTING)
                     .color(0x008EFF)
                     .iconSet(SHINY)
-                    .build().setFormula("FeMa");
+                    .build();
 
             TerraSteel = new Material.Builder(36, gtceuimId("terrasteel"))
                     .dust()
@@ -626,7 +527,7 @@ public class IntegrationMaterials {
                     .flags(GENERATE_ALL_METAL, NO_SMELTING)
                     .color(0x2DFF4C)
                     .iconSet(SHINY)
-                    .build().setFormula("FeMa(C)Ma(BeK4N5)Ma", true);
+                    .build();
 
             Elementium = new Material.Builder(38, gtceuimId("elementium"))
                     .dust()
@@ -634,7 +535,7 @@ public class IntegrationMaterials {
                     .flags(GENERATE_ALL_METAL, NO_SMELTING)
                     .color(0xFF2DEA)
                     .iconSet(SHINY)
-                    .build().setFormula("(FeMa)?");
+                    .build();
 
             ManaDiamond = new Material.Builder(39, gtceuimId("mana_diamond"))
                     .dust()
@@ -642,7 +543,7 @@ public class IntegrationMaterials {
                     .flags(GENERATE_ALL_GEM)
                     .color(0x009FB0)
                     .iconSet(DIAMOND)
-                    .build().setFormula("(C)Ma");
+                    .build();
 
             ManaPearl = new Material.Builder(40, gtceuimId("mana_pearl"))
                     .dust()
@@ -650,7 +551,7 @@ public class IntegrationMaterials {
                     .flags(GENERATE_ALL_GEM)
                     .color(0x007EA5)
                     .iconSet(PEARL)
-                    .build().setFormula("(BeK4N5)Ma", true);
+                    .build();
 
             Dragonstone = new Material.Builder(41, gtceuimId("dragonstone"))
                     .dust()
@@ -658,7 +559,7 @@ public class IntegrationMaterials {
                     .flags(GENERATE_ALL_GEM)
                     .color(0xFF2DEA)
                     .iconSet(DIAMOND)
-                    .build().setFormula("Ds");;
+                    .build();
 
             GaiaSpirit = new Material.Builder(42, gtceuimId("gaia_spirit"))
                     .dust()
@@ -666,7 +567,7 @@ public class IntegrationMaterials {
                     .flags(GENERATE_ALL_METAL, NO_SMELTING)
                     .color(0xFFFFFF)
                     .iconSet(SHINY)
-                    .build().setFormula("(FeMaCMaBeK4N5)?4", true);
+                    .build();
         }
 
         // Galacticraft
@@ -678,7 +579,7 @@ public class IntegrationMaterials {
                     .flags(GENERATE_ALL_METAL, NO_SMELTING)
                     .color(0x9B7753)
                     .iconSet(DULL)
-                    .build().setFormula("FeSp", true);
+                    .build();
 
             Desh = new Material.Builder(44, gtceuimId("desh"))
                     .dust()
@@ -687,7 +588,7 @@ public class IntegrationMaterials {
                     .flags(GENERATE_ALL_METAL, NO_SMELTING)
                     .color(0x231D1D)
                     .iconSet(DULL)
-                    .build().setFormula("?Sp");
+                    .build();
 
             Solar = new Material.Builder(45, gtceuimId("solar"))
                     .dust()
@@ -705,10 +606,9 @@ public class IntegrationMaterials {
                         .gem(2)
                         .ore(true)
                         .flags(GENERATE_ALL_GEM)
-                        .components(Calcium, 2, Magnesium, 4, Carbon, 2, Oxygen, 6)
                         .color(0x937E55)
                         .iconSet(DIAMOND)
-                        .build().setFormula("CaMg(CO3)2", true);
+                        .build();
 
                 MysteriousCrystal = new Material.Builder(47, gtceuimId("mysterious_crystal"))
                         .dust()
@@ -717,7 +617,7 @@ public class IntegrationMaterials {
                         .flags(GENERATE_ALL_GEM, DISABLE_DECOMPOSITION)
                         .color(0x00A671)
                         .iconSet(DIAMOND)
-                        .build().setFormula("?MaSp");
+                        .build();
 
                 VolcanicCrystal = new Material.Builder(48, gtceuimId("volcanic_crystal"))
                         .dust()
@@ -733,7 +633,6 @@ public class IntegrationMaterials {
                         .gem(2)
                         .ore()
                         .flags(GENERATE_ALL_GEM)
-                        .components(Silicon, 1, Oxygen, 2)
                         .color(0x16161B)
                         .iconSet(DIAMOND)
                         .build();
@@ -747,7 +646,6 @@ public class IntegrationMaterials {
                     .gem(2)
                     .ore(true)
                     .flags(GENERATE_ALL_GEM)
-                    .components(Carbon, 10, Hydrogen, 16, Oxygen, 1)
                     .color(0xFFC107)
                     .iconSet(AMBER)
                     .build();
@@ -758,7 +656,7 @@ public class IntegrationMaterials {
                     .flags(GENERATE_ALL_METAL)
                     .color(0x70308b)
                     .iconSet(THAUMIUM)
-                    .build().setFormula("FeMa", true);
+                    .build();
 
             Void = new Material.Builder(52, gtceuimId("void"))
                     .dust()
@@ -766,7 +664,7 @@ public class IntegrationMaterials {
                     .flags(GENERATE_ALL_METAL)
                     .color(0x3b2453)
                     .iconSet(VOID)
-                    .build().setFormula("?Ma", true);
+                    .build();
 
             DirtyAirCrystal = new Material.Builder(53, gtceuimId("dirty_air_crystal"))
                     .dust()
@@ -823,6 +721,7 @@ public class IntegrationMaterials {
                     .build();
 
         }
+
         // Aether Mod
         if (AetherLegacy.isModLoaded() && !disableAetherModIntegration) {
             Zanite = new Material.Builder(59, gtceuimId("zanite"))
@@ -860,60 +759,156 @@ public class IntegrationMaterials {
                     .iconSet(SHINY)
                     .build();
 
-            if (ExtraUtilities2.isModLoaded() && !disableExtraUtilities2Integration) {
-                Unstable = new Material.Builder(63, gtceuimId("unstable"))
-                        .dust()
-                        .ingot()
-                        .flags(GENERATE_ALL_METAL)
-                        .color(0xFFFFFF)
-                        .iconSet(SHINY)
-                        .build().setFormula("Fe/C", true);
+        }
 
-                Lunar = new Material.Builder(64, gtceuimId("lunar"))
-                        .dust()
-                        .ingot()
-                        .components(Lapis, 1)
-                        .flags(GENERATE_ALL_METAL)
-                        .color(0xff25e5)
-                        .iconSet(DULL)
-                        .build().setFormula("?");
+        if (ExtraUtilities2.isModLoaded() && !disableExtraUtilities2Integration) {
+            Unstable = new Material.Builder(63, gtceuimId("unstable"))
+                    .dust()
+                    .ingot()
+                    .flags(GENERATE_ALL_METAL)
+                    .color(0xFFFFFF)
+                    .iconSet(SHINY)
+                    .build();
 
-                Moon = new Material.Builder(65, gtceuimId("moon"))
-                        .dust()
-                        .gem(2)
-                        .ore(true)
-                        .flags(GENERATE_ALL_GEM)
-                        .color(0xccfaff)
-                        .iconSet(EMERALD)
-                        .build().setFormula("C?");
+            Lunar = new Material.Builder(64, gtceuimId("lunar"))
+                    .dust()
+                    .ingot()
+                    .flags(GENERATE_ALL_METAL)
+                    .color(0xff25e5)
+                    .iconSet(DULL)
+                    .build();
 
-                Demon = new Material.Builder(66, gtceuimId("demonic_metal"))
-                        .dust()
-                        .ingot()
-                        .components(Gold, 1)
-                        .flags(GENERATE_ALL_METAL)
-                        .color(0xff3810)
-                        .iconSet(DULL)
-                        .build().setFormula("Au?");
+            Moon = new Material.Builder(65, gtceuimId("moon"))
+                    .dust()
+                    .gem(2)
+                    .ore(true)
+                    .flags(GENERATE_ALL_GEM)
+                    .color(0xccfaff)
+                    .iconSet(EMERALD)
+                    .build();
 
-                Enchanted = new Material.Builder(67, gtceuimId("enchanted_metal"))
-                        .dust()
-                        .ingot()
-                        .components(Gold, 1, Lapis, 1)
-                        .flags(GENERATE_ALL_METAL)
-                        .color(0xC5FF2F)
-                        .iconSet(DULL)
-                        .build();
+            Demon = new Material.Builder(66, gtceuimId("demonic_metal"))
+                    .dust()
+                    .ingot()
+                    .flags(GENERATE_ALL_METAL)
+                    .color(0xff3810)
+                    .iconSet(DULL)
+                    .build();
 
-                EvilInfusedIron = new Material.Builder(68, gtceuimId("evil_metal"))
-                        .dust()
-                        .ingot()
-                        .components(Iron, 8, NetherStar, 1)
-                        .flags(GENERATE_ALL_METAL)
-                        .color(0x1e1d1f)
-                        .iconSet(DULL)
-                        .build();
-            }
+            Enchanted = new Material.Builder(67, gtceuimId("enchanted_metal"))
+                    .dust()
+                    .ingot()
+                    .flags(GENERATE_ALL_METAL)
+                    .color(0xC5FF2F)
+                    .iconSet(DULL)
+                    .build();
+
+            EvilInfusedIron = new Material.Builder(68, gtceuimId("evil_metal"))
+                    .dust()
+                    .ingot()
+                    .flags(GENERATE_ALL_METAL)
+                    .color(0x1e1d1f)
+                    .iconSet(DULL)
+                    .build();
+        }
+
+        if (ThermalExpansion.isModLoaded() && !disableThermalExpansionIntegration) {
+            ManaInfused = new Material.Builder(69, gtceuimId("mithril"))
+                    .dust()
+                    .ore()
+                    .ingot()
+                    .flags(GENERATE_ALL_METAL, NO_SMELTING)
+                    .color(0x5E94B2)
+                    .iconSet(SHINY)
+                    .build();
+
+            Constantan = new Material.Builder(70, gtceuimId("constantan"))
+                    .dust()
+                    .ingot()
+                    .flags(GENERATE_ALL_METAL, NO_SMELTING)
+                    .color(0xD39F48)
+                    .iconSet(METALLIC)
+                    .build();
+
+            Signalum = new Material.Builder(71, gtceuimId("signalum"))
+                    .dust()
+                    .ingot()
+                    .flags(GENERATE_ALL_METAL, NO_SMELTING)
+                    .color(0xF24C00)
+                    .iconSet(METALLIC)
+                    .build();
+
+            Lumium = new Material.Builder(72, gtceuimId("lumium"))
+                    .dust()
+                    .ingot()
+                    .flags(GENERATE_ALL_METAL, NO_SMELTING)
+                    .color(0xDEE490)
+                    .iconSet(METALLIC)
+                    .build();
+
+            Enderium = new Material.Builder(73, gtceuimId("enderium"))
+                    .dust()
+                    .ingot()
+                    .flags(GENERATE_ALL_METAL, NO_SMELTING)
+                    .color(0x0C5253)
+                    .iconSet(METALLIC)
+                    .build();
+
+            Pyrotheum = new Material.Builder(74, gtceuimId("pyrotheum"))
+                    .dust()
+                    .fluid()
+                    .color(0xE9BF15)
+                    .iconSet(METALLIC)
+                    .build();
+
+            Cryotheum = new Material.Builder(75, gtceuimId("cryotheum"))
+                    .dust()
+                    .fluid()
+                    .color(0x3FD6F3)
+                    .iconSet(METALLIC)
+                    .build();
+
+            Aerotheum = new Material.Builder(76, gtceuimId("aerotheum"))
+                    .dust()
+                    .fluid()
+                    .color(0xCEC080)
+                    .iconSet(METALLIC)
+                    .build();
+
+            Petrotheum = new Material.Builder(77, gtceuimId("petrotheum"))
+                    .dust()
+                    .fluid()
+                    .color(0x504852)
+                    .iconSet(METALLIC)
+                    .build();
+
+            Mana = new Material.Builder(78, gtceuimId("mana"))
+                    .dust()
+                    .fluid()
+                    .color(0x9365D2)
+                    .iconSet(METALLIC)
+                    .build();
+
+            Blizz = new Material.Builder(79, gtceuimId("blizz"))
+                    .dust()
+                    .flags(GENERATE_ROD)
+                    .color(0x3FD6F3)
+                    .iconSet(METALLIC)
+                    .build();
+
+            Blitz = new Material.Builder(80, gtceuimId("blitz"))
+                    .dust()
+                    .flags(GENERATE_ROD)
+                    .color(0xCEC080)
+                    .iconSet(METALLIC)
+                    .build();
+
+            Basalz = new Material.Builder(81, gtceuimId("basalz"))
+                    .dust()
+                    .flags(GENERATE_ROD)
+                    .color(0x504852)
+                    .iconSet(METALLIC)
+                    .build();
         }
     }
 }
